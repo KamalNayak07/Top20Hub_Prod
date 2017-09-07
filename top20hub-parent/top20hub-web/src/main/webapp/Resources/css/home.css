@@ -1,0 +1,241 @@
+/* TEMPLATE STYLES */
+/* Necessary for full page carousel*/
+html, body {
+	height: 100%;
+}
+
+.first-content {
+	width: 100%;
+	float: left;
+}
+
+.second-content {
+	width: 100%;
+	float: right;
+}
+
+/* Navigation*/
+.navbar {
+	background-color: transparent;
+}
+
+.logo {
+	width: 5%;
+	height: 5%;
+}
+
+.top-nav-collapse {
+	background-color: #304a74;
+}
+
+.bottomright {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 15px;
+	margin: 10px;
+	right: 0;
+	margin-right: 120px;
+	margin-bottom: 35px;
+}
+
+footer.page-footer {
+	background-color: #304a74;
+}
+
+@media only screen and (max-width: 768px) {
+	.navbar {
+		background-color: #304a74;
+		height: 120px;
+	}
+}
+
+.scrolling-navbar {
+	-webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+	-moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+	transition: background .5s ease-in-out, padding .5s ease-in-out;
+}
+/* Carousel*/
+.carousel {
+	height: 75%;
+}
+
+@media ( max-width : 776px) {
+	.carousel {
+		height: 100%;
+	}
+}
+
+.carousel-item, .active {
+	height: 100%;
+}
+
+.carousel-inner {
+	height: 100%;
+}
+
+/*Caption*/
+.flex-center {
+	color: #fff;
+}
+
+/*Login Model*/
+form {
+	padding: 20px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 15px 0
+		rgba(0, 0, 0, 0.12) !important;
+}
+
+h4 {
+	text-align: center;
+}
+
+.btn {
+	border-radius: 0px;
+}
+
+.form-control {
+	border-radius: 0px;
+	margin-bottom: 10px;
+}
+
+p {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.fa {
+	color: #337ab7;
+}
+
+.fa-facebook-f {
+	padding: 10px 12px 10px 12px;
+	border: 1px solid #337ab7;
+	border-radius: 50%;
+}
+
+.fa-google-plus {
+	padding: 10px 8px 10px 8px;
+	border: 1px solid #337ab7;
+	border-radius: 50%;
+}
+
+.fa-twitter {
+	padding: 10px 8px 10px 8px;
+	border: 1px solid #337ab7;
+	border-radius: 50%;
+}
+
+i {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.flip {
+	-webkit-perspective: 800;
+	perspective: 800;
+	position: relative;
+}
+
+.flip .card.flipped {
+	-moz-backface-visibility: hidden;
+	-webkit-transform: rotatey(-180deg);
+	transform: rotatey(-180deg);
+	background-color: transparent;
+}
+
+.flip .card {
+	-moz-backface-visibility: hidden;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: 0.5s;
+	transform-style: preserve-3d;
+	transition: 0.5s;
+}
+
+.flip .card .face {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	z-index: 2;
+}
+
+.flip .card .front {
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	background-color: transparent;
+}
+
+.flip .card .back {
+	-webkit-transform: rotatey(-180deg);
+	transform: rotatey(-180deg);
+	background-color: transparent;
+}
+
+.inner {
+	margin: 0px !important;
+}
+/*@import url('//cdnjs.cloudflare.com/ajax/libs/summernote/0.5.1/summernote.css');*/
+
+/*Search*/
+.featurette {
+	display: table;
+	width: 100%;
+	height: 50%;
+	/* set a pixel height and then remove the body,html height */
+	vertical-align: middle;
+	/*background: #555;*/
+	/*color: #fff;*/
+}
+
+.featurette-inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.featurette {
+	padding: 3%;
+	/*padding-top: 2%;*/
+	max-width: 980px; /*max width of search*/
+	margin: 0 auto;
+}
+
+.search {
+	padding: 3%;
+	/*padding-top: 2%;*/
+	max-width: 980px; /*max width of search*/
+	margin: 0 auto;
+}
+
+.no-margin-top {
+	margin-top: 0
+}
+
+/* ------ form-control-lg */
+.form-control-lg {
+	min-height: 26px;
+	border-radius: 10px;
+	font-size: 18px;
+	line-height: normal;
+}
+
+/* ------ disjointed form group custom */
+.featurette .search.has-button .btn {
+	margin-top: 2px;
+	width: 100%;
+	border-radius: 10px;
+}
+
+@media ( min-width :480px) {
+	.featurette .search.has-button .form-group {
+		position: relative;
+		padding-right: 110px; /*space for button*/
+	}
+	.featurette .search.has-button .btn {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: auto;
+		margin: 0;
+	}
+}
