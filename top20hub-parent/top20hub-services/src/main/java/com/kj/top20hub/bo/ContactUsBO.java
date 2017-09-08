@@ -9,5 +9,9 @@ public interface ContactUsBO {
 	public int create(ContactUs contactUs);
 	
 	public List<ContactUs> getAllMessages();
+	
+	public ContactUs getMessage(int id);
+	
+	public ContactUs deleteMessage(int id);
 
 }

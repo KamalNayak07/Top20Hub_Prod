@@ -18,7 +18,6 @@ public class ContactUsDAOImpl implements ContactUsDAO{
 	SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
 	public int create(ContactUs contactUs) {
 
 		Session currentSession = null;
@@ -28,7 +27,6 @@ public class ContactUsDAOImpl implements ContactUsDAO{
 	}
 
 	@Override
-	@Transactional
 	public List<ContactUs> getAllMessages() {
 		
 		Session currentSession = null;
@@ -40,6 +38,34 @@ public class ContactUsDAOImpl implements ContactUsDAO{
 		List<ContactUs> result = query.getResultList();
 		
 		return result;
+	}
+
+	@Override
+	public ContactUs getMessage(int id) {
+
+		Session currentSession = null;
+		
+		currentSession = sessionFactory.getCurrentSession();
+		
+		ContactUs result = currentSession.get(ContactUs.class, id);
+		
+		return result;
+	}
+
+	@Override
+	public ContactUs deleteMessage(int id) {
+		
+		Session currentSession = null;
+		
+		currentSession = sessionFactory.getCurrentSession();
+		
+		ContactUs result = currentSession.get(ContactUs.class, id);
+		
+		currentSession.delete(result);
+		
+		
+		return result;
+		
 	}
 
 }
