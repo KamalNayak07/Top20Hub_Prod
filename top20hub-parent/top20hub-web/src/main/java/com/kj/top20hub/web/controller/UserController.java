@@ -31,8 +31,8 @@ public class UserController {
 	@Autowired
 	private UserBO userService;
 
-//	@Autowired
-//	private ContactUsBO contactUsService;
+	@Autowired
+	private ContactUsBO contactUsService;
 
 	@GetMapping(value = "/")
 	public List<User> listUsers() {
@@ -86,19 +86,19 @@ public class UserController {
 		return "contactUsMessages";
 	}
 
-//	@GetMapping(value = "/contactus/messages")
-//	public List<ContactUs> contactUsMsg() {
-//
-//		List<ContactUs> contactUs = contactUsService.getAllMessages();
-//		return contactUs;
-//
-//	}
+	@GetMapping(value = "/contactus/messages")
+	public List<ContactUs> contactUsMsg() {
 
-//	@PostMapping("/saveContactUs")
-//	public int createContactUs(@RequestBody ContactUs contactUs) {
-//		int result = contactUsService.create(contactUs);
-//
-//		return result;
-//	}
+		List<ContactUs> contactUs = contactUsService.getAllMessages();
+		return contactUs;
+
+	}
+
+	@PostMapping("/saveContactUs")
+	public int createContactUs(@RequestBody ContactUs contactUs) {
+		int result = contactUsService.create(contactUs);
+
+		return result;
+	}
 
 }

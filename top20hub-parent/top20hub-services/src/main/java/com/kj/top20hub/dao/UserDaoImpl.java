@@ -45,12 +45,6 @@ public class UserDaoImpl implements UserDAO {
 	@Override
 	public int createUser(User user)
 	{
-//		User user1 = new User("Kamal","kamal@gmail.com",878578,"123456");
-//		UserDetails userDetails = new UserDetails("infosys","SSE","kamal_t","kamal_f",4,"/images");
-//		UserInterest userIntrest = new UserInterest("Swimming, Watching Movie");
-//		
-//		user1.setUserDetails(userDetails);
-//		user1.setUserIntrest(userIntrest);
 		
 		Session curSession = null;
 		curSession = sessionFactory.getCurrentSession();
