@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "contentmedia")
+@Table(name = "content_media")
 public class ContentMedia implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -30,9 +30,7 @@ public class ContentMedia implements Serializable {
 
 	}
 
-	public ContentMedia(int cm_id, String image_url, String video_url) {
-		super();
-		this.cm_id = cm_id;
+	public ContentMedia(String image_url, String video_url) {
 		this.image_url = image_url;
 		this.video_url = video_url;
 	}

@@ -1,6 +1,7 @@
 package com.kj.top20hub.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -35,8 +36,9 @@ public class Content implements Serializable {
 	@Column
 	private int status;
 
+
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "contentmedia")
+	@JoinColumn(name = "content_media")
 	ContentMedia contentMediaId;
 
 	@Column
@@ -45,9 +47,8 @@ public class Content implements Serializable {
 	public Content() {
 	}
 
-	public Content(int content_id, String title, String description, String links, int status,
+	public Content(String title, String description, String links, int status,
 			ContentMedia contentMediaId, int user_id) {
-		this.content_id = content_id;
 		this.title = title;
 		this.description = description;
 		this.links = links;
@@ -61,10 +62,7 @@ public class Content implements Serializable {
 		return content_id;
 	}
 
-	public void setContent_id(int content_id) {
-		this.content_id = content_id;
-	}
-
+	
 	public String getTitle() {
 		return title;
 	}

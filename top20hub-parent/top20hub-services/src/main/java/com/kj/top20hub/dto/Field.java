@@ -1,10 +1,12 @@
 package com.kj.top20hub.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,15 +28,16 @@ public class Field implements Serializable {
 	@Column
 	private String field_desc;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "topic")
-	Topic topic;
+
+	
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "topic_id")
+	List<Topic> topic;
 
 	public Field() {
 	}
 
-	public Field(int field_id, String field_desc, Topic topicId) {
-		this.field_id = field_id;
+	public Field(String field_desc, List<Topic> topicId) {
 		this.field_desc = field_desc;
 		this.topic = topicId;
 	}
@@ -43,9 +46,6 @@ public class Field implements Serializable {
 		return field_id;
 	}
 
-	public void setField_id(int field_id) {
-		this.field_id = field_id;
-	}
 
 	public String getField_desc() {
 		return field_desc;
@@ -55,11 +55,11 @@ public class Field implements Serializable {
 		this.field_desc = field_desc;
 	}
 
-	public Topic getTopicId() {
+	public List<Topic> getTopicId() {
 		return topic;
 	}
 
-	public void setTopicId(Topic topicId) {
+	public void setTopicId(List<Topic> topicId) {
 		this.topic = topicId;
 	}
 

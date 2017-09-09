@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kj.top20hub.Exception.UserNotFoundException;
 import com.kj.top20hub.bo.ContactUsBO;
 import com.kj.top20hub.dto.ContactUs;
-import com.kj.top20hub.dto.User;
 
 @RestController
 @RequestMapping("/contactUs")

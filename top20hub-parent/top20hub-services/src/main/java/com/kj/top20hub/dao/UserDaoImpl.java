@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kj.top20hub.dto.User;
-import com.kj.top20hub.dto.UserDetails;
-import com.kj.top20hub.dto.UserInterest;
 
 @Repository
 public class UserDaoImpl implements UserDAO {
