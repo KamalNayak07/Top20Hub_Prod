@@ -32,6 +32,7 @@ public class UserController {
 	@Autowired
 	private ContactUsBO contactUsService;
 
+	
 	@GetMapping(value = "/")
 	public List<User> listUsers() {
 		List<User> users = userService.getAllUsers();
@@ -84,6 +85,8 @@ public class UserController {
 		return "contactUsMessages";
 	}
 
+	
+	
 	@GetMapping(value = "/contactus/messages")
 	public List<ContactUs> contactUsMsg() {
 
@@ -91,7 +94,7 @@ public class UserController {
 		return contactUs;
 
 	}
-
+	
 	@PostMapping("/saveContactUs")
 	public int createContactUs(@RequestBody ContactUs contactUs) {
 		int result = contactUsService.create(contactUs);

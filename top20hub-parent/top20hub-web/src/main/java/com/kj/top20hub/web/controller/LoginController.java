@@ -8,9 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
 	
 	@RequestMapping("/login")
-	public String login()
+	public String loginPage()
 	{
-		return "login";
+		return "login"; 
 	}
+	
+	@RequestMapping("/loginError")
+	public String loginFailed()
+	{
+		return "loginError"; 
+	}
+	
 
 }
