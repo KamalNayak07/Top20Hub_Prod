@@ -30,7 +30,7 @@
 							class="btn btn-primary btn-block waves-effect waves-light"
 							data-toggle="modal" data-target="#loginModel">Log In
 							/Sign Up</button> --> <a target="_blank" class="nav-link"
-					href="${content}/login.html">Login</a>
+					href="${context}/login.html">Login</a>
 				</li>
 				<li class="nav-item pull-right"><a target="_blank"
 					class="nav-link" href="${content}/profile.html">My Profile</a></li>

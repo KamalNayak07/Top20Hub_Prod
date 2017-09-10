@@ -29,7 +29,6 @@ public class FieldController {
 		return fieldService.getAllField();
 	}
 	
-	
 	@PostMapping("/")
 	public ResponseEntity<Object> createField(@RequestBody Field field)
 	{
@@ -39,8 +38,5 @@ public class FieldController {
 		return ResponseEntity.created(location).build();
 		
 	}
-	
-	
-	
 	
 }

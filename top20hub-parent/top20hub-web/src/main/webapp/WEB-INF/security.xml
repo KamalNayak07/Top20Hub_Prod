@@ -11,10 +11,10 @@
 		<intercept-url pattern="/field/**" access="hasRole('ADMIN')" />
 		<intercept-url pattern="/Resources/**" access="permitAll" />
 		<intercept-url pattern="/login" access="permitAll" />
-		<intercept-url pattern="/" access="permitAll"/>
+		<intercept-url pattern="/" access="permitAll" />
 
 		<form-login login-page="/login" default-target-url="/"
-			authentication-failure-url="/loginError" />
+			authentication-failure-url="/login?error=true" />
 		<logout logout-success-url="/" logout-url="/j_spring_security_logout" />
 		<csrf disabled="true" />
 	</http>
@@ -25,6 +25,19 @@
 				<user name="kamal" password="kamal123" authorities="ROLE_USER, ROLE_ADMIN" />
 				<user name="jai" password="jai123" authorities="ROLE_USER" />
 			</user-service>
+		</authentication-provider>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="myDataSource"
+
+				users-by-username-query="
+         SELECT USER_NAME, PASSWORD, CASE ENABLED WHEN 1 THEN 'true' ELSE 'false' END 'ENABLED'
+         FROM USER WHERE USER_NAME=?;"
+
+				authorities-by-username-query="
+        SELECT u.USER_NAME, r.ROLE_NAME
+        FROM USER u, USER_ROLE r
+        WHERE u.USER_ID = r.USER_ID
+        AND u.USER_NAME=?;" />
 		</authentication-provider>
 	</authentication-manager>
 

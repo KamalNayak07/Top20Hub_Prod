@@ -19,7 +19,7 @@ import com.kj.top20hub.dto.ContactUs;
 @RequestMapping("/contactUs")
 public class ContactUsController {
 
-	@Autowired
+	@Autowired 
 	private ContactUsBO contactUsService;
 	
 	@GetMapping(value = "/")
@@ -27,7 +27,6 @@ public class ContactUsController {
 
 		List<ContactUs> contactUs = contactUsService.getAllMessages();
 		return contactUs;
-
 	}
 	
 	@GetMapping(value = "/{id}")
