@@ -1,7 +1,6 @@
 package com.kj.top20hub.dto;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -36,7 +35,6 @@ public class Content implements Serializable {
 	@Column
 	private int status;
 
-
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "content_media")
 	ContentMedia contentMediaId;
@@ -44,17 +42,26 @@ public class Content implements Serializable {
 	@Column
 	private int user_id;
 
+	@Column
+	private int field_id;
+
+	@Column
+	private int topic_id;
+
+	
 	public Content() {
 	}
 
 	public Content(String title, String description, String links, int status,
-			ContentMedia contentMediaId, int user_id) {
+			ContentMedia contentMediaId, int user_id,int field_id,int topic_id) {
 		this.title = title;
 		this.description = description;
 		this.links = links;
 		this.status = status;
 		this.contentMediaId = contentMediaId;
 		this.user_id = user_id;
+		this.field_id = field_id;
+		this.topic_id = topic_id;
 	}
 
 
@@ -113,10 +120,31 @@ public class Content implements Serializable {
 		this.user_id = user_id;
 	}
 
+	
+	
+	public int getField_id() {
+		return field_id;
+	}
+
+	public void setField_id(int field_id) {
+		this.field_id = field_id;
+	}
+
+	public int getTopic_id() {
+		return topic_id;
+	}
+
+	public void setTopic_id(int topic_id) {
+		this.topic_id = topic_id;
+	}
+
 	@Override
 	public String toString() {
 		return "Content [content_id=" + content_id + ", title=" + title + ", description=" + description + ", links="
-				+ links + ", status=" + status + ", contentMediaId=" + contentMediaId + ", user_id=" + user_id + "]";
+				+ links + ", status=" + status + ", contentMediaId=" + contentMediaId + ", user_id=" + user_id
+				+ ", field_id=" + field_id + ", topic_id=" + topic_id + "]";
 	}
+
+	
 
 }

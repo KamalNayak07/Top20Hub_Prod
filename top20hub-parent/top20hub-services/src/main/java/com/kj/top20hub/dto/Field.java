@@ -27,8 +27,6 @@ public class Field implements Serializable {
 
 	@Column
 	private String field_desc;
-
-
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "topic_id")
