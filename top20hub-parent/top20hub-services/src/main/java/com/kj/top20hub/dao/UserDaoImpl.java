@@ -20,13 +20,9 @@ public class UserDaoImpl implements UserDAO {
 	public List<User> getAlluser() {
 
 		Session currentSession = null;
-
 		currentSession = sessionFactory.getCurrentSession();
-
 		Query<User> query = currentSession.createQuery("from User", User.class);
-
 		List<User> result = query.getResultList();
-
 		return result;
 	}
 
@@ -43,12 +39,10 @@ public class UserDaoImpl implements UserDAO {
 	@Override
 	public int createUser(User user)
 	{
-		
 		Session curSession = null;
 		curSession = sessionFactory.getCurrentSession();
 		int result = (int) curSession.save(user);
 		return result;
-		
 	}
 
 	@Override
@@ -64,12 +58,9 @@ public class UserDaoImpl implements UserDAO {
 
 		Session curSession = null;
 		curSession = sessionFactory.getCurrentSession();
-		
 		User user = curSession.get(User.class,id);
-		
-		 curSession.delete(user);
-		 
-		 return user;
+        curSession.delete(user);
+		return user;
 	}
 
 }
