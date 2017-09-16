@@ -29,9 +29,11 @@
 					<!-- <button type="button"
 							class="btn btn-primary btn-block waves-effect waves-light"
 							data-toggle="modal" data-target="#loginModel">Log In
-							/Sign Up</button> --> <a target="_blank" class="nav-link"
+							/Sign Up</button> --> <a class="nav-link"
 					href="${context}/login.html">Login</a>
 				</li>
+				<li class="nav-item pull-right"><a class="nav-link"
+					href='<c:url value="/j_spring_security_logout" />'>Logout</a></li>
 				<li class="nav-item pull-right"><a target="_blank"
 					class="nav-link" href="${content}/profile.html">My Profile</a></li>
 			</ul>

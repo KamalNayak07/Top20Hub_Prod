@@ -11,11 +11,12 @@
 		<intercept-url pattern="/field/**" access="hasRole('ADMIN')" />
 		<intercept-url pattern="/Resources/**" access="permitAll" />
 		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/logout" access="permitAll" />
 		<intercept-url pattern="/" access="permitAll" />
 
 		<form-login login-page="/login" default-target-url="/"
 			authentication-failure-url="/login?error=true" />
-		<logout logout-success-url="/" logout-url="/j_spring_security_logout" />
+		 <logout logout-success-url="/" logout-url="/j_spring_security_logout" />
 		<csrf disabled="true" />
 	</http>
 

@@ -13,6 +13,12 @@ public class LoginController {
 		return "login"; 
 	}
 	
+	@RequestMapping("/logout")
+	public String logOut()
+	{
+		return "logout"; 
+	}
+	
 	@RequestMapping("/loginError")
 	public String loginFailed()
 	{
