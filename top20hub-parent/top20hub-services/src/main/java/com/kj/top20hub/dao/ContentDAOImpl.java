@@ -31,7 +31,6 @@ public class ContentDAOImpl implements ContentDAO {
 		currentSession = sessionFactory.getCurrentSession();
 		Content content = currentSession.get(Content.class, id);
 		return content;
-
 	}
 
 	@Override
@@ -44,8 +43,9 @@ public class ContentDAOImpl implements ContentDAO {
 
 	@Override
 	public void updateContent(Content content) {
-		// TODO Auto-generated method stub
-
+		Session currentSession = null;
+		currentSession = sessionFactory.getCurrentSession();
+		currentSession.update(content);
 	}
 
 	@Override

@@ -59,7 +59,7 @@ public class UserController {
 
 	@PutMapping(value = "/updateUser")
 	public void updateUser(@RequestBody User user) {
-		int id = user.getUser_id();
+	//	int id = user.getUser_id();
 		userService.updateUser(user);
 	}
 

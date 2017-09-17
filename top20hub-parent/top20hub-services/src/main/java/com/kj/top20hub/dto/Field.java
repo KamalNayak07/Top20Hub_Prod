@@ -2,6 +2,7 @@ package com.kj.top20hub.dto;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -30,12 +31,12 @@ public class Field implements Serializable {
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "topic_id")
-	List<Topic> topic;
+	Set<Topic> topic;
 
 	public Field() {
 	}
 
-	public Field(String field_desc, List<Topic> topicId) {
+	public Field(String field_desc, Set<Topic> topicId) {
 		this.field_desc = field_desc;
 		this.topic = topicId;
 	}
@@ -53,11 +54,11 @@ public class Field implements Serializable {
 		this.field_desc = field_desc;
 	}
 
-	public List<Topic> getTopicId() {
+	public Set<Topic> getTopicId() {
 		return topic;
 	}
 
-	public void setTopicId(List<Topic> topicId) {
+	public void setTopicId(Set<Topic> topicId) {
 		this.topic = topicId;
 	}
 

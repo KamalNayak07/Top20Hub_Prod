@@ -35,9 +35,9 @@ public class ContentBOImpl implements ContentBO {
 	}
 
 	@Override
+	@Transactional
 	public void updateContent(Content content) {
-		// TODO Auto-generated method stub
-
+		contentdao.updateContent(content);
 	}
 
 	@Override

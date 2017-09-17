@@ -28,12 +28,10 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User getUser(int id) {
-
 		Session curSession = null;
 		curSession = sessionFactory.getCurrentSession();
 		User user = curSession.get(User.class, id);
 		return user;
-
 	}
 	
 	@Override

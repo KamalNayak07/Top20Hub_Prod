@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,11 +47,11 @@ public class ContentController {
 	public ResponseEntity<Object> createContent(@RequestBody Content content)
 	{
 		int result = contentbo.createContent(content);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("{/id}").buildAndExpand(result).toUri();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(result).toUri();
 		return ResponseEntity.created(location).build();		
 	}
 
-	
+		
 	@DeleteMapping(value = "/deleteContent/{id}")
 	public void deleteContent(@PathVariable int id) {
 		Content content = contentbo.deleteContent(id);
@@ -58,5 +59,12 @@ public class ContentController {
 			throw new UserNotFoundException("Content does not exist: " + id);
 		}
 	}
+	
+	@PutMapping(value = "/updateContent")
+	public void updateContent(@RequestBody Content content) {
+	//	int content_id = content.getContent_id();
+		contentbo.updateContent(content);
+	}
+
 
 }
