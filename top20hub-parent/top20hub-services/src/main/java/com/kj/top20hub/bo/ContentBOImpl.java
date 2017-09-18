@@ -9,13 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.kj.top20hub.dao.ContentDAO;
 import com.kj.top20hub.dto.Content;
 
-
 @Service
 public class ContentBOImpl implements ContentBO {
 
 	@Autowired
-	private ContentDAO contentdao; 
-	
+	private ContentDAO contentdao;
+
 	@Override
 	@Transactional
 	public List<Content> getAllContent() {
@@ -26,6 +25,24 @@ public class ContentBOImpl implements ContentBO {
 	@Transactional
 	public Content getContent(int id) {
 		return contentdao.getContent(id);
+	}
+
+	@Override
+	@Transactional
+	public List<Content> getContentbyField(int id) {
+		return contentdao.getContentbyField(id);
+	}
+
+	@Override
+	@Transactional
+	public List<Content> getContentbyTopic(int id) {
+		return contentdao.getContentbyTopic(id);
+	}
+
+	@Override
+	@Transactional
+	public List<Content> getContentbyUser(int id) {
+		return contentdao.getContentbyUser(id);
 	}
 
 	@Override

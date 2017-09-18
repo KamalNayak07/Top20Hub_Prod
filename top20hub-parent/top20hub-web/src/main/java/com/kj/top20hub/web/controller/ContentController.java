@@ -33,16 +33,44 @@ public class ContentController {
 		return listOfContent;
 	}
 
+	
 	@GetMapping(value = "/{id}")
 	public Content getContent(@PathVariable int id) {
 		Content content = contentbo.getContent(id);
 		if (content == null) {
-			throw new UserNotFoundException("Content Not Found: " + id);
+			throw new UserNotFoundException("Content Not Found by ContentID: " + id);
 		}
-
 		return content;
 	}
-
+	
+	
+	@GetMapping(value = "byField/{id}")
+	public List<Content> getContentbyField(@PathVariable int id) {
+		List<Content> listOfContent = contentbo.getContentbyField(id);
+		if (listOfContent.size()==0) {
+			throw new UserNotFoundException("No Content For this Field:" + id);
+		}
+		return listOfContent;
+	}
+	
+	@GetMapping(value = "byTopic/{id}")
+	public List<Content> getContentbyTopic(@PathVariable int id) {
+		List<Content> listOfContent = contentbo.getContentbyTopic(id);
+		if (listOfContent.size()==0) {
+			throw new UserNotFoundException("No Content For this Topic:" + id);
+		}
+		return listOfContent;
+	}
+		
+	@GetMapping(value = "byUser/{id}")
+	public List<Content> getContentbyUser(@PathVariable int id) {
+		List<Content> listOfContent = contentbo.getContentbyUser(id);
+		if (listOfContent.size()==0) {
+			throw new UserNotFoundException("No Content For this User:" + id);
+		}
+		return listOfContent;
+	}
+	
 	@PostMapping(value="/")
 	public ResponseEntity<Object> createContent(@RequestBody Content content)
 	{
@@ -65,6 +93,5 @@ public class ContentController {
 	//	int content_id = content.getContent_id();
 		contentbo.updateContent(content);
 	}
-
 
 }

@@ -32,6 +32,36 @@ public class ContentDAOImpl implements ContentDAO {
 		Content content = currentSession.get(Content.class, id);
 		return content;
 	}
+	
+	@Override
+	public List<Content> getContentbyField(int id) {
+		Session currentSession = null;
+		currentSession = sessionFactory.getCurrentSession();
+		Query<Content> query = currentSession.createQuery("from Content where field_id=:param", Content.class);
+		query.setParameter("param",id);
+		List<Content> listOfContent = query.getResultList();
+		return listOfContent;
+	}
+
+	@Override
+	public List<Content> getContentbyTopic(int id) {
+		Session currentSession = null;
+		currentSession = sessionFactory.getCurrentSession();
+		Query<Content> query = currentSession.createQuery("from Content where topic_id=:param", Content.class);
+		query.setParameter("param",id);
+		List<Content> listOfContent = query.getResultList();
+		return listOfContent;
+	}
+
+	@Override
+	public List<Content> getContentbyUser(int id) {
+		Session currentSession = null;
+		currentSession = sessionFactory.getCurrentSession();
+		Query<Content> query = currentSession.createQuery("from Content where user_id=:param", Content.class);
+		query.setParameter("param",id);
+		List<Content> listOfContent = query.getResultList();
+		return listOfContent;
+	}
 
 	@Override
 	public int createContent(Content content) {
@@ -56,5 +86,7 @@ public class ContentDAOImpl implements ContentDAO {
 		currentSession.delete(content);
 		return content;
 	}
+
+	
 
 }
