@@ -1,17 +1,13 @@
 package com.kj.top20hub.dto;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,15 +19,13 @@ public class Field implements Serializable {
 
 	@Id
 	@Column
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int field_id;
 
 	@Column
 	private String field_desc;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "topic_id")
-	Set<Topic> topic;
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,mappedBy="field")
+	private Set<Topic> topic;
 
 	public Field() {
 	}

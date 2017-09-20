@@ -87,6 +87,4 @@ public class ContentDAOImpl implements ContentDAO {
 		return content;
 	}
 
-	
-
 }
