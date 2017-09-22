@@ -16,5 +16,11 @@ public class HomeController {
 		return mv;
 		
 	}
+	
+	@RequestMapping("/userDetails")
+	public String userDetails()
+	{
+		return "users_details";
+	}
 
 }

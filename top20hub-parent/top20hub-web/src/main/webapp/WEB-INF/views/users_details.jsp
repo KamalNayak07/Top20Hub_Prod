@@ -1,50 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html ng-app="top20hubApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>No of users</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
 </head>
-<body>
-	<h1>User Details: </h1>
+<body ng-controller="UserController as ctrl">
+	<h1>User Details:</h1>
 
-	<div class ="user-table">
-	
-		<table>
-			<tr>
-				<th>ID</th>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Contact No</th>
-				<th>Company</th>
-				<th>Designation</th>
-				<th>Intrest</th>
-				<th>Facebook</th>
-				<th>Google</th>
-				<th>Twitter</th>
-			</tr>
-			
-			<c:forEach var="tempUsers" items="${users}">
-				<tr>
-					<td>${tempUsers.id}</td>
-					<td>${tempUsers.name}</td>
-					<td>${tempUsers.email}</td>
-					<td>${tempUsers.contactNo}</td>
-					<td>${tempUsers.company}</td>
-					<td>${tempUsers.designation}</td>
-					<td>${tempUsers.intrest}</td>
-					<td>${tempUsers.f_url}</td>
-					<td>${tempUsers.g_url}</td>
-					<td>${tempUsers.t_url}</td>
-				</tr>
-			</c:forEach>
-			
-		</table>	
-	
-	
+	<div class="user-table">
+
+		<div class="panel-body">
+			<table
+				class="table table-bordered bordered table-striped table-condensed datatable"
+				ui-jq="dataTable" ui-options="dataTableOpt">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>User Name</th>
+						<th>Email</th>
+						<th>Contact No</th>
+						<th>User Details ID</th>
+						<th>Company</th>
+						<th>Designation</th>
+						<th>Facebook</th>
+						<th>Twitter</th>
+						<th>Instagram</th>
+						<th>Rating</th>
+						<th>Image URl</th>
+						<th>User Intrest ID</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="u in ctrl.users">
+						<td><span ng-bind="u.user_id"></span></td>
+						<td><span ng-bind="u.user_name"></span></td>
+						<td><span ng-bind="u.email"></span></td>
+						<td><span ng-bind="u.contact"></span></td>
+						<td><span ng-bind="u.userDetails.user_details_id"></span></td>
+						<td><span ng-bind="u.userDetails.company"></span></td>
+						<td><span ng-bind="u.userDetails.designation"></span></td>
+						<td><span ng-bind="u.userDetails.f_id"></span></td>
+						<td><span ng-bind="u.userDetails.t_id"></span></td>
+						<td><span ng-bind="u.userDetails.i_id"></span></td>
+						<td><span ng-bind="u.userDetails.rating"></span></td>
+						<td><span ng-bind="u.userDetails.image_url"></span></td>
+						<td><span ng-bind="u.userIntrest.user_interest_id"></span></td>
+						<td><span ng-bind="u.userIntrest.interest_desc"></span></td>
+						<td>
+							<button type="button" ng-click="ctrl.remove(u.user_id)"
+								class="btn btn-danger custom-width">Remove</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+	<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
+	<script
+		src="<c:url value='/Resources/js/js_files/service/userService.js' />"></script>
+	<script
+		src="<c:url value='/Resources/js/js_files/controller/userController.js' />"></script>
+
 
 </body>
 </html>

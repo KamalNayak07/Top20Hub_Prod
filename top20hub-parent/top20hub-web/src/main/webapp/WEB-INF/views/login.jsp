@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<html>
+<html ng-app="top20hubApp">
 <head>
 <title>Login Page</title>
 
@@ -15,6 +15,8 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 </head>
@@ -96,7 +98,7 @@
 								<div
 									style="border-top: 1px solid #888; padding-top: 15px; font-size: 85%">
 									Don't have an account! <a href="#"
-										onClick="$('#loginbox').hide(); $('#signupbox').show()">
+										onClick="$('#loginbox').hide();$('#signupbox').show()">
 										Sign Up Here </a>
 								</div>
 							</div>
@@ -120,62 +122,61 @@
 							In</a>
 					</div>
 				</div>
-				<div class="panel-body">
-					<form id="signupform" class="form-horizontal" role="form">
+				<div class="panel-body" ng-controller="UserController as ctrl">
+					<form id="signupform" class="form-horizontal" role="form" name="myForm"
+						ng-submit="ctrl.submit()">
 
 						<div id="signupalert" style="display: none"
 							class="alert alert-danger">
 							<p>Error:</p>
 							<span></span>
 						</div>
+						<input type="hidden" class="form-control" name="user id"
+							ng-model="ctrl.user_id" placeholder="First Name">
 
-
-
+						<div class="form-group">
+							<label for="firstname" class="col-md-3 control-label">User
+								Name</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" name="username"
+									ng-model="ctrl.user.user_name" placeholder="User Name">
+							</div>
+						</div>
 						<div class="form-group">
 							<label for="email" class="col-md-3 control-label">Email</label>
 							<div class="col-md-9">
 								<input type="text" class="form-control" name="email"
-									placeholder="Email Address">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="firstname" class="col-md-3 control-label">First
-								Name</label>
-							<div class="col-md-9">
-								<input type="text" class="form-control" name="firstname"
-									placeholder="First Name">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="lastname" class="col-md-3 control-label">Last
-								Name</label>
-							<div class="col-md-9">
-								<input type="text" class="form-control" name="lastname"
-									placeholder="Last Name">
+									ng-model="ctrl.user.email" placeholder="Email Address">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="password" class="col-md-3 control-label">Password</label>
 							<div class="col-md-9">
-								<input type="password" class="form-control" name="passwd"
-									placeholder="Password">
+								<input type="password" class="form-control" name="password"
+									ng-model="ctrl.user.password" placeholder="Password">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-md-3 control-label">Contact</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" name="contact"
+									ng-model="ctrl.user.contact" placeholder="Contact">
 							</div>
 						</div>
 
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="icode" class="col-md-3 control-label">Invitation
 								Code</label>
 							<div class="col-md-9">
 								<input type="text" class="form-control" name="icode"
 									placeholder="">
 							</div>
-						</div>
+						</div> -->
 
 						<div class="form-group">
 							<!-- Button -->
 							<div class="col-md-offset-3 col-md-9">
-								<button id="btn-signup" type="button" class="btn btn-info">
+								<button id="btn-signup" type="submit" class="btn btn-info">
 									<i class="icon-hand-right"></i> &nbsp Sign Up
 								</button>
 								<span style="margin-left: 8px;">or</span>
@@ -200,10 +201,12 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+	<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
+	<script
+		src="<c:url value='/Resources/js/js_files/service/userService.js' />"></script>
+	<script
+		src="<c:url value='/Resources/js/js_files/controller/userController.js' />"></script>
 </body>
 </html>
