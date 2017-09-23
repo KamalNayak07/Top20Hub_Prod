@@ -31,6 +31,7 @@ background-color:#304a74;
 <body ng-controller="UserController as ctrl">
 	<div class="user-table">
 	<h2 class="text-center">User Details:</h2>
+	<h4> No of User Registered : {{ctrl.users.length}}</h4>
 		<div class="panel-body">
 			<table
 				class="table table-bordered bordered table-striped table-condensed datatable"

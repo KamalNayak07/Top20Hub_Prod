@@ -175,11 +175,14 @@
 
 						<div class="form-group">
 							<!-- Button -->
-							<div class="col-md-offset-3 col-md-9">
-								<button id="btn-signup" type="submit" class="btn btn-info">
+							<div class="col-md-offset-1 col-md-9">
+								<button id="btn-signup" type="submit" class="btn btn-primary ">
 									<i class="icon-hand-right"></i> &nbsp Sign Up
 								</button>
-								<span style="margin-left: 8px;">or</span>
+								
+								<button id="btn-signup" type="reset" class="btn btn-info pull-right">
+									<i class="icon-hand-left"></i> &nbsp Reset
+								</button>
 							</div>
 						</div>
 
