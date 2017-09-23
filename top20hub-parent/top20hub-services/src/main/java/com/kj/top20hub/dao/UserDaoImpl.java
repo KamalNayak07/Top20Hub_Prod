@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kj.top20hub.dto.User;
+import com.kj.top20hub.dto.UserDetails;
+import com.kj.top20hub.dto.UserInterest;
 
 @Repository
 public class UserDaoImpl implements UserDAO {
@@ -39,6 +41,13 @@ public class UserDaoImpl implements UserDAO {
 	{
 		Session curSession = null;
 		curSession = sessionFactory.getCurrentSession();
+		
+		UserDetails userDetails = new UserDetails();
+		UserInterest userInterest = new UserInterest();
+		
+		
+		user.setUserDetails(userDetails);
+		user.setUserIntrest(userInterest);
 		int result = (int) curSession.save(user);
 		return result;
 	}

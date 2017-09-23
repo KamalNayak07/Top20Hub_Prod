@@ -9,11 +9,42 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
+<style type="text/css">
+.grid {
+	width: 1150px;
+	height: 400px;
+}
+
+.header-filtered {
+	color: blue;
+}
+</style>
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+<script src="http://ui-grid.info/release/ui-grid.js"></script>
+<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css"
+	type="text/css">
+
 </head>
 <body ng-controller="UserController as ctrl">
 	<h1>User Details:</h1>
+	
 
-	<div class="user-table">
+	<button id='toggleFiltering' ng-click="toggleFiltering()"
+		class="btn btn-success">Toggle Filtering</button>
+	<div id="grid1" ui-grid="gridOptions" class="grid"></div>
+
+
+
+	<!-- <div class="user-table">
 
 		<div class="panel-body">
 			<table
@@ -61,7 +92,7 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
+	</div> -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

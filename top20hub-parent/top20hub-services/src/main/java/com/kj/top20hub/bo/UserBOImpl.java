@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.kj.top20hub.dao.UserDAO;
 import com.kj.top20hub.dto.User;
+import com.kj.top20hub.dto.UserDetails;
+import com.kj.top20hub.dto.UserInterest;
 
 @Service
 public class UserBOImpl implements UserBO {

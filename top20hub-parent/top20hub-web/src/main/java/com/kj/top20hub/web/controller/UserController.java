@@ -21,6 +21,8 @@ import com.kj.top20hub.bo.ContactUsBO;
 import com.kj.top20hub.bo.UserBO;
 import com.kj.top20hub.dto.ContactUs;
 import com.kj.top20hub.dto.User;
+import com.kj.top20hub.dto.UserDetails;
+import com.kj.top20hub.dto.UserInterest;
 
 @RestController
 @RequestMapping("/users")
