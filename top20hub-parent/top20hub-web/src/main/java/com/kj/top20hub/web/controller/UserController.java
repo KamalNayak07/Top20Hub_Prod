@@ -3,6 +3,7 @@ package com.kj.top20hub.web.controller;
 import java.net.URI;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -28,6 +29,8 @@ import com.kj.top20hub.dto.UserInterest;
 @RequestMapping("/users")
 public class UserController {
 
+	private static final Logger log = Logger.getLogger(UserController.class);
+	
 	@Autowired
 	private UserBO userService;
 
@@ -37,6 +40,7 @@ public class UserController {
 	
 	@GetMapping(value = "/")
 	public List<User> listUsers() {
+		log.info("Get all users");
 		List<User> users = userService.getAllUsers();
 		return users;
 	}

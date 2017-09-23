@@ -56,7 +56,7 @@
 
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-user"></i></span> <input id="login-username"
+								class="glyphicon glyphicon-envelope"></i></span> <input id="login-username"
 								type="text" class="form-control" name="username" value=""
 								placeholder="username or email">
 						</div>
@@ -132,7 +132,7 @@
 							<span></span>
 						</div>
 						<input type="hidden" class="form-control" name="user id"
-							ng-model="ctrl.user_id" placeholder="First Name">
+							ng-model="ctrl.user.user_id" placeholder="First Name">
 
 						<div class="form-group">
 							<label for="firstname" class="col-md-3 control-label">User
@@ -193,16 +193,15 @@
 							</div>
 
 						</div>
-
-
-
 					</form>
 				</div>
 			</div>
 		</div>
+	
 	</div>
+	
 	<script
-		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+		src="<c:url value='/Resources/js/angular.min.js' />"></script>
 	<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
 	<script
 		src="<c:url value='/Resources/js/js_files/service/userService.js' />"></script>

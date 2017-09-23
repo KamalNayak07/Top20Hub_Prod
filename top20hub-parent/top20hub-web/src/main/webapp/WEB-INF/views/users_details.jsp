@@ -8,11 +8,15 @@
 <title>No of users</title>
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet">
+	rel="stylesheet" type="text/css">
 <style type="text/css">
 .grid {
 	width: 1150px;
 	height: 400px;
+}
+.navbar
+{
+background-color:#304a74;
 }
 
 .header-filtered {
@@ -20,32 +24,13 @@
 }
 </style>
 
-<script
-	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
-<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
-<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
-<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
-<script src="http://ui-grid.info/release/ui-grid.js"></script>
 <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css"
 	type="text/css">
 
 </head>
 <body ng-controller="UserController as ctrl">
-	<h1>User Details:</h1>
-	
-
-	<button id='toggleFiltering' ng-click="toggleFiltering()"
-		class="btn btn-success">Toggle Filtering</button>
-	<div id="grid1" ui-grid="gridOptions" class="grid"></div>
-
-
-
-	<!-- <div class="user-table">
-
+	<div class="user-table">
+	<h2 class="text-center">User Details:</h2>
 		<div class="panel-body">
 			<table
 				class="table table-bordered bordered table-striped table-condensed datatable"
@@ -92,14 +77,10 @@
 				</tbody>
 			</table>
 		</div>
-	</div> -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+	</div>
+	<script src="<c:url value='/Resources/js/jquery-3.1.1.min.js'/>"></script>
+	<script src="<c:url value='/Resources/js/angular.min.js'/>"></script>
+	<script src="<c:url value='/Resources/js/bootstrap.min.js'/>"></script>
 	<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
 	<script
 		src="<c:url value='/Resources/js/js_files/service/userService.js' />"></script>

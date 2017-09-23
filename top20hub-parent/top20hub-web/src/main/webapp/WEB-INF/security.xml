@@ -31,13 +31,13 @@
 			<jdbc-user-service data-source-ref="myDataSource"
 
 				users-by-username-query="
-         SELECT USER_NAME, PASSWORD, CASE ENABLED WHEN 1 THEN 'true' ELSE 'false' END 'ENABLED'
-         FROM USER WHERE USER_NAME=?;"
+         SELECT EMAIL, PASSWORD, CASE ENABLED WHEN 1 THEN 'true' ELSE 'false' END 'ENABLED'
+         FROM USER WHERE EMAIL=?;"
 
 				authorities-by-username-query="
-        SELECT USER_NAME, ROLE_NAME
+        SELECT EMAIL, ROLE_NAME
         FROM USER
-        WHERE USER_NAME=?;" />
+        WHERE EMAIL=?;" />
 		</authentication-provider>
 	</authentication-manager>
 

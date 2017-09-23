@@ -32,7 +32,7 @@ app.factory('userService', ['$http','$q',function($http,$q){
 	                deferred.resolve(response.data);
 	            },
 	            function(errResponse){
-	                console.error('Error while creating User');
+	                console.error('Error to create User');
 	                deferred.reject(errResponse);
 	            }
 	        );
