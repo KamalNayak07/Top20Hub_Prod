@@ -23,4 +23,16 @@ public class HomeController {
 		return "users_details";
 	}
 
+	@RequestMapping("/contactPage")
+	public String ContactPage()
+	{
+		return "contact_page";
+	}
+	
+	@RequestMapping("/contactUsMessages")
+	public String ContactusMessages()
+	{
+		return "contactUsMessages";
+	}
+	
 }

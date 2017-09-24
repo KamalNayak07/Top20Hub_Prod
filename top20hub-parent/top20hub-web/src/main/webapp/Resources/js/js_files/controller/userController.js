@@ -51,7 +51,7 @@ app.controller('UserController', [
 
 			function submit() {
 				console.log("user_id " + self.user.user_id);
-				if (self.user.user_id === null) {
+				if (self.user.user_id == null) {
 					console.log('Saving New User', self.user);
 					createUser(self.user);
 				} else {
