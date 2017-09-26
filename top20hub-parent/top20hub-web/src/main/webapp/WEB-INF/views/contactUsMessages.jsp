@@ -32,6 +32,7 @@ background-color:#304a74;
 	<div class="contact-table">
 	<h2 class="text-center">Contact Us - Messages</h2>
 	<h4> &nbsp&nbsp Messages received: {{ctrl.contacts.length}}</h4>
+	<h4>Search User : <input type="text" ng-model = "ctrl.searchText"/></h4>
 		<div class="panel-body">
 			<table
 				class="table table-bordered bordered table-striped table-condensed datatable"
@@ -46,7 +47,7 @@ background-color:#304a74;
 						</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="u in ctrl.contacts">
+					<tr ng-repeat="u in ctrl.contacts | filter : ctrl.searchText">
 						<td><span ng-bind="u.id"></span></td>
 						<td><span ng-bind="u.name"></span></td>
 						<td><span ng-bind="u.message"></span></td>

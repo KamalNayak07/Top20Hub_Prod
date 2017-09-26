@@ -31,7 +31,8 @@ background-color:#304a74;
 <body ng-controller="UserController as ctrl">
 	<div class="user-table">
 	<h2 class="text-center">User Details:</h2>
-	<h4> No of User Registered : {{ctrl.users.length}}</h4>
+	<h4> No of Users : {{ctrl.users.length}}</h4>
+	<h4>Search User : <input type="text" ng-model = "ctrl.searchText"/></h4>
 		<div class="panel-body">
 			<table
 				class="table table-bordered bordered table-striped table-condensed datatable"
@@ -55,7 +56,7 @@ background-color:#304a74;
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="u in ctrl.users">
+					<tr ng-repeat="u in ctrl.users | filter:ctrl.searchText">
 						<td><span ng-bind="u.user_id"></span></td>
 						<td><span ng-bind="u.user_name"></span></td>
 						<td><span ng-bind="u.email"></span></td>

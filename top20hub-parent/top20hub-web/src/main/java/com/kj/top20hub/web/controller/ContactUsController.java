@@ -40,9 +40,9 @@ public class ContactUsController {
 		return contactUs;
 	}
 
-	@PostMapping("/saveMessage")
-	public int createContactUs(@RequestBody ContactUs contactUs) {
-		int result = contactUsService.create(contactUs);
+	@PostMapping(value = "/")
+	public int createContactUs(@RequestBody ContactUs contact) {
+		int result = contactUsService.create(contact);
 
 		return result;
 	}

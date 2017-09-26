@@ -1,7 +1,7 @@
 app.factory('contactService', ['$http','$q',function($http,$q){
 	
 	var Rest_ContactUs = 'http://localhost:8081/top20hub-web/contactUs/';
-	var Rest_ContactUs_CreateMsg = 'http://localhost:8081/top20hub-web/contactUs/saveMessage/';
+	var Rest_ContactUs_CreateMsg = 'http://localhost:8081/top20hub-web/contactUs/';
 	var Rest_ContactUs_DeleteMsg = 'http://localhost:8081/top20hub-web/contactUs/deleteMessage/';
 	
 	var factory = {

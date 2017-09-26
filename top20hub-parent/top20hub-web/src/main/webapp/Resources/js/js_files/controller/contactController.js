@@ -8,7 +8,6 @@ app.controller('contactController', [
 			var self = this;
 
 			self.contact = {
-				id : null,
 				name : '',
 				message : '',
 				email : '',
@@ -19,6 +18,8 @@ app.controller('contactController', [
 			self.remove = remove;
 			self.submit = submit;
 			self.reset = reset;
+			
+			self.searchText = '';
 
 			fetchAllMessages();
 
@@ -61,13 +62,8 @@ app.controller('contactController', [
 			}
 
 			function submit() {
-				console.log("id " + self.contact.id);
-				if (self.contact.id == null) {
 					console.log('Saving New Message', self.contact);
 					createMessage(self.contact);
-				} else {
-					console.log("Id is not null");
-				}
 
 			}
 			function reset() {

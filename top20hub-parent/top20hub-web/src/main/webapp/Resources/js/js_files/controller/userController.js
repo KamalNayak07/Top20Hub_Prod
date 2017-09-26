@@ -19,6 +19,8 @@ app.controller('UserController', [
 			self.remove = remove;
 			self.submit = submit;
 			self.reset = reset;
+			
+			self.searchText='';
 
 			fetchAllUsers();
 
