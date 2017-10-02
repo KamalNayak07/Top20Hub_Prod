@@ -62,7 +62,7 @@
 						ng-model="ctrl.contact.phone" placeholder="Phone">
 				</div>
 			</div>
-
+		
 			<div class="form-group">
 				<!-- Button -->
 				<div class="col-md-offset-1 col-md-9">
@@ -85,5 +85,7 @@
 		src="<c:url value='/Resources/js/js_files/service/contactService.js' />"></script>
 	<script
 		src="<c:url value='/Resources/js/js_files/controller/contactController.js' />"></script>
+		
+
 </body>
 </html>

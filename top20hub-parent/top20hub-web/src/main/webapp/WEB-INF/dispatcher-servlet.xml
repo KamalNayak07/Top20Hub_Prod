@@ -35,8 +35,8 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl"
 			value="jdbc:mysql://localhost:3306/top20hub_db?useSSL=false" />
-		<property name="user" value="devuser" />
-		<property name="password" value="Top20tower@" />
+		<property name="user" value="user" />
+		<property name="password" value="user" />
 
 		<!-- these are connection pool properties for C3P0 -->
 		<property name="minPoolSize" value="5" />
@@ -83,5 +83,9 @@
 	<!-- Configure bean to convert JSON to POJO and vice versa -->
 	<bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 	</bean>
+	 
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="maxUploadSize" value="10000000"/>
+	</bean> 
 
 </beans>

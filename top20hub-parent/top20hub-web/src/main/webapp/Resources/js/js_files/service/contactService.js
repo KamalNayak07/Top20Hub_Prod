@@ -50,7 +50,7 @@ app.factory('contactService', ['$http','$q',function($http,$q){
 	                deferred.resolve(response.data);
 	            },
 	            function(errResponse){
-	                console.error('Error to create a message');
+	                console.error('Error to create a message here');
 	                deferred.reject(errResponse);
 	            }
 	        );
