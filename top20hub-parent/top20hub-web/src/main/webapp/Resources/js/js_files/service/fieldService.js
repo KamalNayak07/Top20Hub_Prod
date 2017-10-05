@@ -1,7 +1,8 @@
 app.factory('fieldService', ['$http','$q',function($http,$q){
 	
 	var Rest_field = 'http://localhost:8081/top20hub-web/field/';
-	
+	var Rest_updateField = 'http://localhost:8081/top20hub-web/field/updateField/';
+		
 	var factory = {
 			fetchAllFields: fetchAllFields,
 			createField: createField,
@@ -42,13 +43,13 @@ app.factory('fieldService', ['$http','$q',function($http,$q){
 	 
 	     function updateField(field,id) {
 	        var deferred = $q.defer();
-	        $http.put(Rest_field+id,field)
+	        $http.put(Rest_updateField,field)
 	            .then(
 	            function (response) {
 	                deferred.resolve(response.data);
 	            },
 	            function(errResponse){
-	                console.error('Error while updating Field');
+	                console.error('Error while updating Field:'+id);
 	                deferred.reject(errResponse);
 	            }
 	        );

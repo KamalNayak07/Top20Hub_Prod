@@ -20,6 +20,7 @@
      			self.updateField =updateField;
      			self.searchText = '';
      			self.uploadFile = uploadFile;
+     			self.editField = editField;
      			
      			fetchAllFields();
 
@@ -44,23 +45,36 @@
      			function submit() {
      				console.log("field_id " + self.field.field_id);
      				if (self.field.field_id === null) {
-     					console.log('Saving New Field', self.field);
+     					console.log('Saving New Field', self.field.field_id);
      					createField(self.field);
      					uploadFile();
-     				} else {
-     					console.log("ID is not null");
+     				} else {     					
+     					console.log('Updating Field', self.field.field_id);
+     					updateField(self.field,self.field.field_id);
      				}
 
      			}
      			
      			function uploadFile(){
      	           var file = self.field.field_image;
+     	  //       file.name = self.field.field_desc;
      	           console.log('file is ' );
      	           console.dir(file);
      	           var uploadUrl = "http://localhost:8081/top20hub-web/field/fieldImage/";
      	           fileUpload.uploadFileToUrl(file, uploadUrl);
      	        }
+     			
 
+     			function editField(field_id){
+     		        console.log('field_id to be edited:', field_id);
+     		        for(var i = 0; i < self.fields.length; i++){
+     		            if(self.fields[i].field_id === field_id) {
+     		                self.field = angular.copy(self.fields[i]);
+     		                break;
+     		            }
+     		        }
+     		    }
+     			
      			function updateField(field, id) {
      				fieldService.updateField(field, id).then(self.fetchAllfields,
      						function(errResponse) {
@@ -70,9 +84,11 @@
      			
 
      			function reset() {
+     				console.log('resetting');
      				self.field = {
      					field_id : null,
-     					field_desc : ''
+     					field_desc : '',
+     					field_image : ''
      				};
      				$scope.myForm.$setPristine(); // reset Form
      			}

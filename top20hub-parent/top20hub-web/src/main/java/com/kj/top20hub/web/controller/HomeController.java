@@ -35,12 +35,11 @@ public class HomeController {
 		return "contactUsMessages";
 	}
 	
-	@RequestMapping("/fieldPage")
-	public String fieldPage()
+
+	@RequestMapping("/fieldAdminPage")
+	public String fieldAdminPage()
 	{
-		return "field";
+		return "fieldAdminPage";
 	}
-	
-	
 	
 }

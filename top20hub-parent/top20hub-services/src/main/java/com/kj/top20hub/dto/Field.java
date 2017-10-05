@@ -24,7 +24,7 @@ public class Field implements Serializable {
 	@Column
 	private String field_desc;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,mappedBy="field")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST,mappedBy="field")
 	private Set<Topic> topic;
 
 	public Field() {
