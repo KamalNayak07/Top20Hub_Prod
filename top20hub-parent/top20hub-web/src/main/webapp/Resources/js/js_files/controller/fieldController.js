@@ -11,9 +11,10 @@
      			self.field = {
      				field_id : null,     			
      				field_desc : '',
-     			    field_image :''	
+     			    field_image :'',
+     			    field_url : ''	
      			};
-
+     			
      			self.fields = [];
      			self.submit = submit;
      			self.reset = reset;
@@ -35,8 +36,11 @@
      			}
 
      			function createField(field) {
+     				self.field.field_url= "C:\\Users\\js185506\\Desktop\\t20code\\Top20Hub_Prod\\top20hub-parent\\top20hub-web\\src\\main\\webapp\\Resources\\img\\field\\"+self.field.field_desc+"_image";
+console.log(field);     					
      				fieldService.createField(field).then(function(success) {
      					alert("Field has been created!");
+     					fetchAllFields();     					
      				}, function(errResponse) {
      					console.error('Error while creating field');
      				});

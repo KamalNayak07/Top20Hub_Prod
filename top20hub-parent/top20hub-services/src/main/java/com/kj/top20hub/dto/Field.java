@@ -24,17 +24,21 @@ public class Field implements Serializable {
 	@Column
 	private String field_desc;
 	
+	@Column
+	private String field_url;
+	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST,mappedBy="field")
 	private Set<Topic> topic;
 
 	public Field() {
 	}
 
-	public Field(String field_desc, Set<Topic> topicId) {
+	public Field(String field_desc, String field_url, Set<Topic> topic) {
 		this.field_desc = field_desc;
-		this.topic = topicId;
+		this.field_url = field_url;
+		this.topic = topic;
 	}
-
+	
 	public int getField_id() {
 		return field_id;
 	}
@@ -56,9 +60,22 @@ public class Field implements Serializable {
 		this.topic = topicId;
 	}
 
-	@Override
-	public String toString() {
-		return "Field [field_id=" + field_id + ", field_desc=" + field_desc + ", topicId=" + topic + "]";
+	public Set<Topic> getTopic() {
+		return topic;
 	}
+
+	public String getField_url() {
+		return field_url;
+	}
+
+	public void setField_url(String field_url) {
+		this.field_url = field_url;
+	}
+
+	public void setTopic(Set<Topic> topic) {
+		this.topic = topic;
+	}
+
+	
 
 }

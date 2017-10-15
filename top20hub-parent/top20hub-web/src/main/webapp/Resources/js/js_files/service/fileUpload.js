@@ -6,11 +6,13 @@
            $http.post(uploadUrl, fd, {
               transformRequest: angular.identity,
               headers: {'Content-Type': undefined}
-           })
-           .success(function(){
+           })  .then(
+           function(){
         	  console.log("success!"); 
            })
            .error(function(){
            });
         }
      }]);
+ 
+ 

@@ -15,6 +15,8 @@
 </head>
 
 <body ng-app="top20hubApp" class="ng-cloak">
+<img src="Capture.PNG">
+	
 	<div class="container" ng-controller="fieldController as ctrl">
 		<div class="panel panel-default">
 
@@ -42,9 +44,8 @@
 						<div class="form-group col-md-12">
 							<label class="col-md-2 control-lable" for="Image">Image</label>
 							<div class="col-md-7">
-								<input type="file" file-model="ctrl.field.field_image" id="image""
-									class="form-control input-sm"
-									placeholder="Field image"" />
+								<input type="file" file-model="ctrl.field.field_image" id="image" class="form-control input-sm"
+									placeholder="Field image"  />
 							</div>
 						</div>
 					</div>
@@ -61,6 +62,8 @@
 						</div>
 					</div>
 					
+					
+					
 		
 				</form>
 			</div>
@@ -75,15 +78,17 @@
 					<thead>
 						<tr>
 							<th>Field Id</th>
-							<th>Field Name</th>
+							<th>Field Name</th>							
+							<th>Field URL</th>
 							<th>Field Image</th>
 							<th width="20%"></th>
-						</tr>
+						 </tr>
 					</thead>
 					<tbody>
 						<tr ng-repeat="u in ctrl.fields | filter : ctrl.searchText">
 							<td><span ng-bind="u.field_id"></span></td>
 							<td><span ng-bind="u.field_desc"></span></td>
+							<td><span ng-bind="u.field_url"></span></td>							
 							<td><span ng-bind="u.field_image"></span></td>
 							<td>
 								<button type="button" ng-click="ctrl.editField(u.field_id)"
@@ -96,7 +101,10 @@
 		</div>
 	</div>
 
-
+	<img src="C:\Users\js185506\Desktop\t20code\Top20Hub_Prod\top20hub-parent\top20hub-web\src\main\webapp\Resources\img\field\img.JPG"/>
+	<img src="..\Resources\img\field\img.JPG"/>
+	<img src="/Capture.PNG"/>
+	
 	<script src="<c:url value='/Resources/js/jquery-3.1.1.min.js'/>"></script>
 	<script src="<c:url value='/Resources/js/angular.min.js'/>"></script>
 	<script src="<c:url value='/Resources/js/bootstrap.min.js'/>"></script>

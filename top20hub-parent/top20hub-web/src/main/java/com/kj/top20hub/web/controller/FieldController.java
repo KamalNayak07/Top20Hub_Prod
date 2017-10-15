@@ -46,12 +46,11 @@ public class FieldController {
 		List<Field> AllFieldsList = fieldService.getAllFields();
 		if(AllFieldsList.size()==0)
 		{
-			throw new UserNotFoundException("No field available");
+		 	throw new UserNotFoundException("No field available");
 		}		
 		return AllFieldsList;
 	}
-	
-	
+		
 	@GetMapping("/{id}")
 	public Field getField(@PathVariable int id)
 	{		
