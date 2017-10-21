@@ -36,8 +36,8 @@
      			}
 
      			function createField(field) {
-     				self.field.field_url= "C:\\Users\\js185506\\Desktop\\t20code\\Top20Hub_Prod\\top20hub-parent\\top20hub-web\\src\\main\\webapp\\Resources\\img\\field\\"+self.field.field_desc+"_image";
-console.log(field);     					
+     				self.field.field_url= "\\Resources\\img\\field\\"+self.field.field_image.name;
+     				console.log(field);     					
      				fieldService.createField(field).then(function(success) {
      					alert("Field has been created!");
      					fetchAllFields();     					

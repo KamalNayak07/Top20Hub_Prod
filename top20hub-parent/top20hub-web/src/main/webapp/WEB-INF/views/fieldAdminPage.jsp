@@ -15,8 +15,7 @@
 </head>
 
 <body ng-app="top20hubApp" class="ng-cloak">
-<img src="Capture.PNG">
-	
+ 
 	<div class="container" ng-controller="fieldController as ctrl">
 		<div class="panel panel-default">
 
@@ -88,8 +87,8 @@
 						<tr ng-repeat="u in ctrl.fields | filter : ctrl.searchText">
 							<td><span ng-bind="u.field_id"></span></td>
 							<td><span ng-bind="u.field_desc"></span></td>
-							<td><span ng-bind="u.field_url"></span></td>							
-							<td><span ng-bind="u.field_image"></span></td>
+							<td><span ng-bind="u.field_url"></span></td>	
+							<td><img src="${pageContext.request.contextPath}{{u.field_url}}" align="middle" height="200" width="300"/></td>
 							<td>
 								<button type="button" ng-click="ctrl.editField(u.field_id)"
 									class="btn btn-success custom-width">Edit</button>
@@ -101,10 +100,6 @@
 		</div>
 	</div>
 
-	<img src="C:\Users\js185506\Desktop\t20code\Top20Hub_Prod\top20hub-parent\top20hub-web\src\main\webapp\Resources\img\field\img.JPG"/>
-	<img src="..\Resources\img\field\img.JPG"/>
-	<img src="/Capture.PNG"/>
-	
 	<script src="<c:url value='/Resources/js/jquery-3.1.1.min.js'/>"></script>
 	<script src="<c:url value='/Resources/js/angular.min.js'/>"></script>
 	<script src="<c:url value='/Resources/js/bootstrap.min.js'/>"></script>
