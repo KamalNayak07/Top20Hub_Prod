@@ -17,29 +17,16 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping("/userDetails")
-	public String userDetails()
-	{
-		return "users_details";
-	}
-
 	@RequestMapping("/contactPage")
 	public String ContactPage()
 	{
 		return "contact_page";
 	}
 	
-	@RequestMapping("/contactUsMessages")
-	public String ContactusMessages()
+	@RequestMapping("/AdminHome")
+	public String AdminHome()
 	{
-		return "contactUsMessages";
-	}
-	
-
-	@RequestMapping("/fieldAdminPage")
-	public String fieldAdminPage()
-	{
-		return "fieldAdminPage";
+		return "AdminHome";
 	}
 	
 }

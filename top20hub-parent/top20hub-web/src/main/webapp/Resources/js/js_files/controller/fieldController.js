@@ -18,7 +18,7 @@
      			self.fields = [];
      			self.submit = submit;
      			self.reset = reset;
-     			self.updateField =updateField;
+     			self.updateField = updateField;
      			self.searchText = '';
      			self.uploadFile = uploadFile;
      			self.editField = editField;
