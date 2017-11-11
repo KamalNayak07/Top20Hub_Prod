@@ -42,7 +42,7 @@
 						<!--Text-->
 						<p class="card-text">A person who never gave in his entire
 							life to achieve something.</p>
-						<a href="${conten}t/top20_inspirational.html" class="btn btn-info">Read
+						<a href="${content}/top20_inspirational.html" class="btn btn-info">Read
 							more</a>
 					</div>
 					<!--/.Card content-->

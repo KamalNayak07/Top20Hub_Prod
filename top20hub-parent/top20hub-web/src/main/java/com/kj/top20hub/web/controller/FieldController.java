@@ -35,7 +35,7 @@ import com.kj.top20hub.dto.Topic;
 @RequestMapping("/field")
 public class FieldController {
 
-	private static String TEMP_FOLDER = "C:\\Users\\js185506\\Desktop\\t20code\\Top20Hub_Prod\\top20hub-parent\\top20hub-web\\src\\main\\webapp\\Resources\\img\\field\\";
+	private static String TEMP_FOLDER = "/Users/kamalnayak/Documents/Top20Hub/top20hub_code/Top20Hub_Prod/top20hub-parent/top20hub-web/src/main/webapp/Resources/img/field/";
 		
 	@Autowired
 	FieldBO fieldService;

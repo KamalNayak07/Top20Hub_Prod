@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('UserController', [
+app.controller('userController', [
 		'$scope',
 		'userService',
 		function($scope, userService) {

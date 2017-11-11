@@ -1,22 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
-<head>
-<title>Content Admin Page</title>
-<style>
-.subject.ng-valid {
-	background-color: lightgreen;
-}
-</style>
-<link
- 	href="${pageContext.request.contextPath}/Resources/css/bootstrap.css"  
-<%--	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" --%>
-	rel="stylesheet" type="text/css">
-</head>
-
-<body ng-app="top20hubApp" class="ng-cloak">
- 
 	<div class="container" ng-controller="contentController as ctrl">
 		<div class="panel panel-default">
 
@@ -136,21 +117,4 @@
 		</div>
 	</div>
 
-	<script src="<c:url value='/Resources/js/jquery-3.1.1.min.js'/>"></script>
-	<script src="<c:url value='/Resources/js/angular.min.js'/>"></script>
-	<script src="<c:url value='/Resources/js/bootstrap.min.js'/>"></script>
-	<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
-	<script
-		src="<c:url value='/Resources/js/js_files/service/topicService.js' />"></script>
 	
-	<script
-		src="<c:url value='/Resources/js/js_files/service/contentService.js' />"></script>
-	<script
-		src="<c:url value='/Resources/js/js_files/controller/contentController.js' />"></script>
-	<script
-		src="<c:url value='/Resources/js/js_files/service/fileUpload.js' />"></script>
-		<script	src="<c:url value='/Resources/js/js_files/directives/fileModel.js' />"></script>
-		
-
-</body>
-</html>
