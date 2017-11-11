@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +38,9 @@ public class UserController {
 
 	@Autowired
 	private ContactUsBO contactUsService;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	
 	@GetMapping(value = "/")
@@ -57,6 +62,7 @@ public class UserController {
 
 	@PostMapping(value = "/")
 	public ResponseEntity<Object> creatUser(@RequestBody User user) {
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		int result = userService.createUser(user);
 		URI location =  ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(result).toUri();

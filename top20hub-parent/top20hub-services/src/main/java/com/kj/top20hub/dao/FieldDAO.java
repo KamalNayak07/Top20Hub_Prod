@@ -13,8 +13,6 @@ public interface FieldDAO {
 	
 	public int createField(Field field);
 
-	public int createTopic(Topic topic);
-
 	public void updateField(Field field);
 
 	public void deleteField(int id);

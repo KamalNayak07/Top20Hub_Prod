@@ -46,10 +46,5 @@ public class FieldBOImpl implements FieldBO {
 		fielddao.deleteField(id);
 	}
 
-	@Override
-	@Transactional
-	public int createTopic(Topic topic) {
-		return fielddao.createTopic(topic);
-	}
 
 }

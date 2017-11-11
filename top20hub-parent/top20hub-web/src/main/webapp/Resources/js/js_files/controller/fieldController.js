@@ -4,7 +4,7 @@
      		'$scope',
      		'fieldService',
      		'fileUpload',
-     		function($scope, fieldService,fileUpload) {
+     		function($scope,fieldService,fileUpload) {
 
      			var self = this;
 
@@ -22,6 +22,7 @@
      			self.searchText = '';
      			self.uploadFile = uploadFile;
      			self.editField = editField;
+     			self.remove= remove;
      			
      			fetchAllFields();
 
@@ -36,7 +37,6 @@
      			}
 
      			function createField(field) {
-     				self.field.field_url= "\\Resources\\img\\field\\"+self.field.field_image.name;
      				console.log(field);     					
      				fieldService.createField(field).then(function(success) {
      					alert("Field has been created!");
@@ -47,6 +47,7 @@
      			}
 
      			function submit() {
+     				self.field.field_url= "\\Resources\\img\\field\\"+self.field.field_image.name;     				
      				console.log("field_id " + self.field.field_id);
      				if (self.field.field_id === null) {
      					console.log('Saving New Field', self.field.field_id);
@@ -80,13 +81,28 @@
      		    }
      			
      			function updateField(field, id) {
-     				fieldService.updateField(field, id).then(self.fetchAllfields,
+     				fieldService.updateField(field, id).then(
+     						function(success){
+     							fetchAllFields();  
+     						},
      						function(errResponse) {
      							console.error('Error while updating field:' + id);
      						});
      			}
      			
 
+    			function remove(id) {
+    				console.log("field_id : " + id);
+    				fieldService.deleteField(id).then(
+    						function(success){
+    						   fetchAllFields();  
+    						},
+    						function(errResponse) {
+    							console.error('Error while deleting fields');
+    						});
+    			}
+
+    			    			
      			function reset() {
      				console.log('resetting');
      				self.field = {

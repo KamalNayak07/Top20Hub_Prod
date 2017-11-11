@@ -1,57 +1,57 @@
-app.factory('fieldService', ['$http','$q',function($http,$q){
+app.factory('topicService', ['$http','$q',function($http,$q){
 	
-	var Rest_field = 'http://localhost:8081/top20hub-web/field/';
-	var Rest_deletefield = 'http://localhost:8081/top20hub-web/field/deleteField/';
-	var Rest_updateField = 'http://localhost:8081/top20hub-web/field/updateField/';
+	var Rest_topic = 'http://localhost:8081/top20hub-web/topic/';
+	var Rest_deletetopic = 'http://localhost:8081/top20hub-web/topic/deleteTopic/';
+	var Rest_updateTopic = 'http://localhost:8081/top20hub-web/topic/updateTopic/';
 		
 	var factory = {
-			fetchAllFields: fetchAllFields,
-			createField: createField,
-			updateField: updateField,
-			deleteField: deleteField			
+			fetchAllTopics: fetchAllTopics,
+			createTopic: createTopic,
+			updateTopic: updateTopic,
+			deleteTopic: deleteTopic			
 	}
 	return factory;
 	
-	 function fetchAllFields() {
+	 function fetchAllTopics() {
 	        var deferred = $q.defer();
-	        $http.get(Rest_field)
+	        $http.get(Rest_topic)
 	            .then(
 	            function (response) {
 	                deferred.resolve(response.data);
 	            },
 	            function(errResponse){
-	                console.error('Error while fetching Fields');
+	                console.error('Error while fetching Topics');
 	                deferred.reject(errResponse);
 	            }
 	        );
 	        return deferred.promise;
 	    }
 	 
-	   function createField(field) {
+	   function createTopic(topic) {
 	        var deferred = $q.defer();
-	        $http.post(Rest_field,field)
+	        $http.post(Rest_topic,topic)
 	            .then(
 	            function (response) {
 	                deferred.resolve(response.data);
 	            },
 	            function(errResponse){
-	                console.error('Error to create a field');
+	                console.error('Error to create a topic');
 	                deferred.reject(errResponse);
 	            }
 	        );
 	        return deferred.promise;
 	    }
-	 
-	 
-	     function updateField(field,id) {
+	   
+ 
+	     function updateTopic(topic,id) {
 	        var deferred = $q.defer();
-	        $http.put(Rest_updateField,field)
+	        $http.put(Rest_updateTopic,topic)
 	            .then(
 	            function (response) {
 	                deferred.resolve(response.data);
 	            },
 	            function(errResponse){
-	                console.error('Error while updating Field:'+id);
+	                console.error('Error while updating Topic:'+id);
 	                deferred.reject(errResponse);
 	            }
 	        );
@@ -59,15 +59,15 @@ app.factory('fieldService', ['$http','$q',function($http,$q){
 	    }
 	     
 	     
-		function deleteField(id) {			
+		function deleteTopic(id) {			
 			var deferred = $q.defer();
-			$http.delete(Rest_deletefield+id)
+			$http.delete(Rest_deletetopic+id)
 			.then(
 				function(response){
 					deferred.resolve(response.data);
 				},
 				function(errResponse){
-					console.error('Error while deleting Field');
+					console.error('Error while deleting Topic');
 	                deferred.reject(errResponse);
 				}
 			);

@@ -3,26 +3,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>Field Admin Page</title>
+<title>Topic Admin Page</title>
 <style>
-.field_desc.ng-valid {
+.subject.ng-valid {
 	background-color: lightgreen;
 }
 </style>
 <link
-<%-- 	href="${pageContext.request.contextPath}/Resources/css/bootstrap.css  --%>
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" type="text/css">
 </head>
 
-
 <body ng-app="top20hubApp" class="ng-cloak">
  
-	<div class="container" ng-controller="fieldController as ctrl">
+	<div class="container" ng-controller="topicController as ctrl">
 		<div class="panel panel-default">
 
 			<div class="panel-heading">
-				<span class="lead"> Field Admin Page </span>
+				<span class="lead"> Topic Admin Page </span>
 			</div>
 			<br />
 			<div class="container">
@@ -30,12 +28,12 @@
 					class="form-horizontal" enctype="multipart/form-data">
 					<div class="row">
 						<div class="form-group col-md-12">
-							<label class="col-md-2 control-lable" for="uname">Field
+							<label class="col-md-2 control-lable" for="uname">Topic
 								Name</label>
 							<div class="col-md-7">
-								<input type="text" ng-model="ctrl.field.field_desc"
-									id="field_desc" class="field_desc form-control input-sm"
-									placeholder="Field Name" required ng-minlength="3" />
+								<input type="text" ng-model="ctrl.topic.subject"
+									id="subject" class="subject form-control input-sm"
+									placeholder="Topic's Name" required ng-minlength="3" />
 							</div>
 						</div>
 					</div>
@@ -45,16 +43,26 @@
 						<div class="form-group col-md-12">
 							<label class="col-md-2 control-lable" for="Image">Image</label>
 							<div class="col-md-7">
-								<input type="file" file-model="ctrl.field.field_image" id="image" class="form-control input-sm"
-									placeholder="Field image"/>
+								<input type="file" file-model="ctrl.topic.topic_image" id="image" class="form-control input-sm"
+									placeholder="Topic's image"  />
 							</div>
 						</div>
 					</div>
+					
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label class="col-md-2 control-lable" for="fname">Select Field</label>
+							<div class="col-md-7">
+								<select ng-model="ctrl.topic.field.field_id" ng-options="x.field_id as x.field_desc for x in ctrl.fields"></select>
+							</div>
+						</div>
+					</div>
+					
 				
 				<div class="container">
 					<div class="row">						
 						<div class="form-actions floatRight">
-							<input type="submit" value="{{!ctrl.field.field_id ? 'Add' : 'Update'}}"
+							<input type="submit" value="{{!ctrl.topic.topic_id ? 'Add' : 'Update'}}"
 								class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
 							<button type="button" ng-click="ctrl.reset()"
 								class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset
@@ -72,30 +80,32 @@
 		<div class="panel panel-default">
 			<!-- Default panel contents -->
 			<div class="panel-heading">
-				<span class="lead">List of Fields :{{ctrl.fields.length}} </span>
+				<span class="lead">List of Topics :{{ctrl.topics.length}} </span>
 			</div>
 			<div class="container">
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>Field Id</th>
-							<th>Field Name</th>							
-							<th>Field URL</th>
-							<th>Field Image</th>
+							<th>Topic Id</th>
+							<th>Topic Name</th>							
+							<th>Field Name </th>
+							<th>Topic URL</th>
+							<th>Topic Image</th>
 							<th width="20%"></th>
 						 </tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="u in ctrl.fields | filter : ctrl.searchText">
-							<td><span ng-bind="u.field_id"></span></td>
-							<td><span ng-bind="u.field_desc"></span></td>
-							<td><span ng-bind="u.field_url"></span></td>	
-							<td><img src="${pageContext.request.contextPath}{{u.field_url}}" align="middle" height="200" width="300"/></td>
+						<tr ng-repeat="u in ctrl.topics | filter : ctrl.searchText">
+							<td><span ng-bind="u.topic_id"></span></td>
+							<td><span ng-bind="u.subject"></span></td>							
+							<td><span ng-bind="u.field.field_desc"></span></td>
+							<td><span ng-bind="u.topic_url"></span></td>	
+							<td><img src="${pageContext.request.contextPath}{{u.topic_url}}" align="middle" height="200" width="300"/></td>
 							<td>
-								<button type="button" ng-click="ctrl.editField(u.field_id)"
-								class="btn btn-success"> Edit </button>
+								<button type="button" ng-click="ctrl.editTopic(u.topic_id)"
+								class="btn btn-success custom-width">Edit</button>
 								&nbsp&nbsp							
-								<button type="button" ng-click="ctrl.remove(u.field_id)"
+								<button type="button" ng-click="ctrl.remove(u.topic_id)"
 								class="btn btn-danger custom-width">Remove</button>
 							</td>
 						</tr>
@@ -111,8 +121,11 @@
 	<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
 	<script
 		src="<c:url value='/Resources/js/js_files/service/fieldService.js' />"></script>
+	
 	<script
-		src="<c:url value='/Resources/js/js_files/controller/fieldController.js' />"></script>
+		src="<c:url value='/Resources/js/js_files/service/topicService.js' />"></script>
+	<script
+		src="<c:url value='/Resources/js/js_files/controller/topicController.js' />"></script>
 	<script
 		src="<c:url value='/Resources/js/js_files/service/fileUpload.js' />"></script>
 		<script	src="<c:url value='/Resources/js/js_files/directives/fileModel.js' />"></script>

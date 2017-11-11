@@ -52,18 +52,7 @@ public class Field implements Serializable {
 		this.field_desc = field_desc;
 	}
 
-	public Set<Topic> getTopicId() {
-		return topic;
-	}
-
-	public void setTopicId(Set<Topic> topicId) {
-		this.topic = topicId;
-	}
-
-	public Set<Topic> getTopic() {
-		return topic;
-	}
-
+	
 	public String getField_url() {
 		return field_url;
 	}
@@ -72,10 +61,13 @@ public class Field implements Serializable {
 		this.field_url = field_url;
 	}
 
-	public void setTopic(Set<Topic> topic) {
+/*	public void setTopic(Set<Topic> topic) {
 		this.topic = topic;
 	}
 
-	
+	public Set<Topic> getTopic() {
+		return topic;
+	}
 
+*/
 }

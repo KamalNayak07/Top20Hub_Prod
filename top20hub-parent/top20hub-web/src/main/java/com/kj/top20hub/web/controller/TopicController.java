@@ -27,59 +27,57 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kj.top20hub.Exception.UserNotFoundException;
-import com.kj.top20hub.bo.FieldBO;
-import com.kj.top20hub.dto.Field;
+import com.kj.top20hub.bo.TopicBO;
 import com.kj.top20hub.dto.Topic;
 
 @RestController
-@RequestMapping("/field")
-public class FieldController {
+@RequestMapping("/topic")
+public class TopicController {
 
-	private static String TEMP_FOLDER = "C:\\Users\\js185506\\Desktop\\t20code\\Top20Hub_Prod\\top20hub-parent\\top20hub-web\\src\\main\\webapp\\Resources\\img\\field\\";
+	private static String TEMP_FOLDER = "C:\\Users\\js185506\\Desktop\\t20code\\Top20Hub_Prod\\top20hub-parent\\top20hub-web\\src\\main\\webapp\\Resources\\img\\topic\\";
 		
 	@Autowired
-	FieldBO fieldService;
-		
+	TopicBO topicService;
+	
 	@GetMapping("/")
-	public List<Field> getAllFields()
+	public List<Topic> getAllTopics()
 	{
-		List<Field> AllFieldsList = fieldService.getAllFields();
-		if(AllFieldsList.size()==0)
+		List<Topic> AllTopicsList = topicService.getAllTopics();
+		if(AllTopicsList.size()==0)
 		{
-		 	throw new UserNotFoundException("No field available");
+		 	throw new UserNotFoundException("No topic available");
 		}		
-		return AllFieldsList;
+		return AllTopicsList;
 	}
 		
 	@GetMapping("/{id}")
-	public Field getField(@PathVariable int id)
+	public Topic getTopic(@PathVariable int id)
 	{		
-		Field field = fieldService.getField(id);
-		if(field==null)
+		Topic topic = topicService.getTopic(id);
+		if(topic==null)
 		{
-			throw new UserNotFoundException("field not found : "+ id);
+			throw new UserNotFoundException("topic not found : "+ id);
 		}
-		return field;
-	}
-	
+		return topic;
+	}	
 	
 	@PostMapping("/")
-	public ResponseEntity<Object> createField(@RequestBody Field field)
-	{
-		int result = fieldService.createField(field);
+	public ResponseEntity<Object> createTopic(@RequestBody Topic topic)
+	{		
+		int result = topicService.createTopic(topic);
 		URI location =  ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(result).toUri();
 		return ResponseEntity.created(location).build();		
 	}
 
-	@PostMapping("/fieldImage") 
+	@PostMapping("/topicImage") 
 	public Object saveUserDataAndFile(@RequestParam(value = "file") MultipartFile file,
 		                              HttpServletRequest request) {
 		
-		String root = request.getSession().getServletContext().getRealPath("/");
-		System.out.println("root:" + root);
+	//	String root = request.getSession().getServletContext().getRealPath("/");
+	//	System.out.println("root:" + root);
 		
-		String pathDirectory = "Resources\\img\\field\\";
+		String pathDirectory = "Resources\\img\\topic\\";
 		try {
 		  // local folder for testing file upload  	
 			file.transferTo(new File(TEMP_FOLDER + file.getOriginalFilename()));
@@ -94,19 +92,26 @@ public class FieldController {
 	}
 	
     
-    
-	
-	@PutMapping("/updateField")
-	public void updateField(@RequestBody Field field)
+    /*@PostMapping("/topic")
+	public ResponseEntity<Object> createTopic(@RequestBody Topic topic)
 	{
-		fieldService.updateField(field);
+		int result = topicService.createTopic(topic);
+		URI location =  ServletUriComponentsBuilder.fromCurrentRequest()
+				.path("/{id}").buildAndExpand(result).toUri();
+		return ResponseEntity.created(location).build();		
+	}*/
+	
+	@PutMapping("/updateTopic")
+	public void updateTopic(@RequestBody Topic topic)
+	{
+		topicService.updateTopic(topic);
 	}
 	
 	
-	@DeleteMapping("/deleteField/{id}")
-	public void deleteField(@PathVariable int id)
+	@DeleteMapping("/deleteTopic/{id}")
+	public void deleteTopic(@PathVariable int id)
 	{
-		fieldService.deleteField(id);
+		topicService.deleteTopic(id);
 	}
 	
 }	
