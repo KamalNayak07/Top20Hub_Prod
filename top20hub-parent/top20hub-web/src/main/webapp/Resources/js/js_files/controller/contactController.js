@@ -8,13 +8,14 @@ app.controller('contactController', [
 			var self = this;
 
 			self.contact = {
+				id : null,	
 				name : '',
 				message : '',
 				email : '',
 				phone : ''
 			};
 
-			self.contact = [];
+			self.contacts = [];
 			self.remove = remove;
 			self.submit = submit;
 			self.reset = reset;

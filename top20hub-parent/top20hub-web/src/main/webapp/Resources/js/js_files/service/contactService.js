@@ -44,7 +44,7 @@ app.factory('contactService', ['$http','$q',function($http,$q){
 	 
 	   function createMessage(contact) {
 	        var deferred = $q.defer();
-	        $http.post(Rest_ContactUs_CreateMsg,contact)
+	        $http.post(Rest_ContactUs,contact)
 	            .then(
 	            function (response) {
 	                deferred.resolve(response.data);
