@@ -32,5 +32,11 @@ public class MappingController {
 	{
 		return "contactUsMessages";
 	}
+	
+	@RequestMapping("/replyContact")
+	public String replyContact()
+	{
+		return "replyContact";
+	}
 
 }

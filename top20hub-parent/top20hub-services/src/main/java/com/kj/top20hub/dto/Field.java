@@ -1,6 +1,7 @@
 package com.kj.top20hub.dto;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -27,7 +28,7 @@ public class Field implements Serializable {
 	@Column
 	private String field_url;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST,mappedBy="field")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, mappedBy="field")
 	private Set<Topic> topic;
 
 	public Field() {
@@ -76,6 +77,23 @@ public class Field implements Serializable {
 		this.topic = topic;
 	}
 
+	public void add(Topic tempTopic)
+	{
+		if(topic == null)
+		{
+			topic = new HashSet<>();
+		}
+		
+		topic.add(tempTopic);
+	}
+
+	@Override
+	public String toString() {
+		return "Field [field_id=" + field_id + ", field_desc=" + field_desc + ", field_url=" + field_url + "]";
+	}
+
+	
+	
 	
 
 }

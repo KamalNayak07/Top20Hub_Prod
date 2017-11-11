@@ -97,6 +97,15 @@ public class FieldController {
     @PostMapping("/topic")
 	public ResponseEntity<Object> createTopic(@RequestBody Topic topic)
 	{
+    	
+    	int fieldId = 1;
+    	
+    	Field field = fieldService.getField(fieldId);
+    	System.out.println(field);
+    	field.add(topic);
+    	System.out.println(field);
+    	
+    	
 		int result = fieldService.createTopic(topic);
 		URI location =  ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(result).toUri();

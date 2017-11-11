@@ -36,7 +36,20 @@ public class ContactUs implements Serializable{
 	@Column
 	private int phone;
 	
+	public ContactUs()
+	{
+		
+	}
 	
+	
+	public ContactUs(String name, String message, String email, int phone) {
+		this.name = name;
+		this.message = message;
+		this.email = email;
+		this.phone = phone;
+	}
+
+
 	public int getId() {
 		return id;
 	}

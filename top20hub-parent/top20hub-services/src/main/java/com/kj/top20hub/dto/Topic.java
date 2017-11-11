@@ -2,13 +2,16 @@ package com.kj.top20hub.dto;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,7 +28,9 @@ public class Topic implements Serializable {
 	@Column
 	private String subject;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER, cascade = {
+			CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH
+	})
 	@JoinColumn(name="field_id",nullable=false)
 	private Field field;
 	

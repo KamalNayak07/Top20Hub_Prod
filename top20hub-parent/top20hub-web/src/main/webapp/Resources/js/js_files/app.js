@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module("top20hubApp", ['ngRoute']);
+var app = angular.module("top20hubApp", ['ngRoute','ui.bootstrap']);
 
 app.config([ '$routeProvider',
 

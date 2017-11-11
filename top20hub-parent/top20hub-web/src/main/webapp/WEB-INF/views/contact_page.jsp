@@ -30,6 +30,8 @@
 	<H1>&nbsp&nbsp&nbspWelcome to Contact Us Page</H1>
 	<div class="panel-body" ng-controller="contactController as ctrl">
 		<form id=contactUsform method="post" ng-submit="ctrl.submit()">
+			<input type="hidden" class="form-control" name="user id"
+							ng-model="ctrl.contact.id" placeholder="First Name">
 
 			<div class="form-group">
 				<label for="Username" class="col-md-3 control-label">Name</label>
@@ -79,7 +81,9 @@
 
 		</form>
 	</div>
-	<script src="<c:url value='/Resources/js/angular.min.js' />"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
 	<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
 	<script
 		src="<c:url value='/Resources/js/js_files/service/contactService.js' />"></script>

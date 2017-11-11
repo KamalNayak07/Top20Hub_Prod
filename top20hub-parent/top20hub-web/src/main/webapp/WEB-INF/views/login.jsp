@@ -56,9 +56,9 @@
 
 						<div style="margin-bottom: 25px" class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-envelope"></i></span> <input id="login-username"
-								type="text" class="form-control" name="username" value=""
-								placeholder="username or email">
+								class="glyphicon glyphicon-envelope"></i></span> <input
+								id="login-username" type="text" class="form-control"
+								name="username" value="" placeholder="username or email">
 						</div>
 
 						<div style="margin-bottom: 25px" class="input-group">
@@ -122,9 +122,9 @@
 							In</a>
 					</div>
 				</div>
-				<div class="panel-body" ng-controller="UserController as ctrl">
-					<form id="signupform" class="form-horizontal" role="form" name="myForm"
-						ng-submit="ctrl.submit()">
+				<div class="panel-body" ng-controller="userController as ctrl">
+					<form id="signupform" class="form-horizontal" role="form"
+						name="myForm" ng-submit="ctrl.submit()">
 
 						<div id="signupalert" style="display: none"
 							class="alert alert-danger">
@@ -179,8 +179,9 @@
 								<button id="btn-signup" type="submit" class="btn btn-primary ">
 									<i class="icon-hand-right"></i> &nbsp Sign Up
 								</button>
-								
-								<button id="btn-signup" type="reset" class="btn btn-info pull-right">
+
+								<button id="btn-signup" type="reset"
+									class="btn btn-info pull-right">
 									<i class="icon-hand-left"></i> &nbsp Reset
 								</button>
 							</div>
@@ -200,11 +201,13 @@
 				</div>
 			</div>
 		</div>
-	
+
 	</div>
-	
-	<script
-		src="<c:url value='/Resources/js/angular.min.js' />"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+
 	<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
 	<script
 		src="<c:url value='/Resources/js/js_files/service/userService.js' />"></script>

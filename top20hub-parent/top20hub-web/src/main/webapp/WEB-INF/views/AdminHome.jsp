@@ -13,6 +13,9 @@
   <!-- SPELLS -->
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+  
+   
   <script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
   <script
 		src="<c:url value='/Resources/js/js_files/service/userService.js' />"></script>
@@ -21,14 +24,17 @@
 		
 		
 		<script
-		src="<c:url value='/Resources/js/js_files/service/contactService.js' />"></script>
+		src="<c:url value='/Resources/js/js_files/service/contactService.js'/>"></script>
 	<script
-		src="<c:url value='/Resources/js/js_files/controller/contactController.js' />"></script>
+		src="<c:url value='/Resources/js/js_files/controller/contactController.js' />"></script>\
+		<script
+		src="<c:url value='/Resources/js/js_files/controller/replyController.js' />"></script>
+		<script
+		src="<c:url value='/Resources/js/js_files/service/replyService.js' />"></script>
 		
 		<script src="<c:url value='/Resources/js/jquery-3.1.1.min.js'/>"></script>
-	<script src="<c:url value='/Resources/js/angular.min.js'/>"></script>
 	<script src="<c:url value='/Resources/js/bootstrap.min.js'/>"></script>
-	<%-- <script src="<c:url value='/Resources/js/js_files/app.js' />"></script> --%>
+
 	<script
 		src="<c:url value='/Resources/js/js_files/service/fieldService.js' />"></script>
 	<script

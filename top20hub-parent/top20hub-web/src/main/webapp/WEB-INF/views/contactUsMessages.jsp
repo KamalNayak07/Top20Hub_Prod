@@ -8,7 +8,7 @@
 				type="text" ng-model="ctrl.searchText" /></span>
 		</div>
 		<div class="container">
-			<table class="table table-hover">
+			<table class="table table-hover table-bordered">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -16,6 +16,8 @@
 						<th>Message</th>
 						<th>Email</th>
 						<th>Phone</th>
+						<th>Remove</th>
+						<th>Reply</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -28,6 +30,10 @@
 						<td>
 							<button type="button" ng-click="ctrl.remove(u.id)"
 								class="btn btn-danger custom-width">Remove</button>
+						</td>
+						<td>
+							<button type="button" ng-click="ctrl.openReplyModal(u.name, u.email)"
+								class="btn btn-success custom-width">Reply</button>
 						</td>
 					</tr>
 				</tbody>
