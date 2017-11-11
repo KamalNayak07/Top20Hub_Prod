@@ -1,14 +1,18 @@
 package com.kj.top20hub.dto;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -41,26 +45,24 @@ public class User implements Serializable {
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="user_details")
-	UserDetails userDetails;
+	private UserDetails userDetails;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="user_interest")
-	UserInterest userIntrest;
+	private UserInterest userIntrest;
 	
-	public User()
-	{
-		
+	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.PERSIST,mappedBy="user")
+	private Set<Content> content;	
+	
+	public User(){		
 	}
 
 	public User(String user_name, String email, int contact, String passowrd, String role_name) {
-
 			this.user_name = user_name;
 			this.email = email;
 			this.contact = contact;
 			this.password = passowrd;
-//			this.role_name = role_name;
-		
-	
+//			this.role_name = role_name;	
 	}
 
 	public UserDetails getUserDetails() {

@@ -28,5 +28,18 @@ public class HomeController {
 	{
 		return "AdminHome";
 	}
+
+	@RequestMapping("/topicAdminPage")
+	public String topicAdminPage()
+	{
+		return "topicAdminPage";
+	}
+
+	@RequestMapping("/contentAdminPage")
+	public String contentAdminPage()
+	{
+		return "contentAdminPage";
+	}
+
 	
 }

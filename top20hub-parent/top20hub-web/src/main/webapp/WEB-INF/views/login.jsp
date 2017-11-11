@@ -192,7 +192,7 @@
 
 							<div class="col-md-offset-3 col-md-9">
 								<button id="btn-fbsignup" type="button" class="btn btn-primary">
-									<i class="icon-facebook"></i>   Sign Up with Facebook
+									<i class="icon-facebook"></i>   Sign Up with Facebook
 								</button>
 							</div>
 

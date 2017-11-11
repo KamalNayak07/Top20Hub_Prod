@@ -10,7 +10,7 @@ app.controller('contactController', [
 			var self = this;
 
 			self.contact = {
-				id : null,
+				id : null,	
 				name : '',
 				message : '',
 				email : '',
