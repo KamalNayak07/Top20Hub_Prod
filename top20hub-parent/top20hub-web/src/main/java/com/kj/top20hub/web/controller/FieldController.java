@@ -16,27 +16,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kj.top20hub.Exception.UserNotFoundException;
 import com.kj.top20hub.bo.FieldBO;
 import com.kj.top20hub.dto.Field;
-import com.kj.top20hub.dto.Topic;
 
 @RestController
 @RequestMapping("/field")
 public class FieldController {
 
-	private static String TEMP_FOLDER = "/Users/kamalnayak/Documents/Top20Hub/top20hub_code/Top20Hub_Prod/top20hub-parent/top20hub-web/src/main/webapp/Resources/img/field/";
-		
+	private static String TEMP_FOLDER = "C:\\Users\\js185506\\Desktop\\t20code\\Top20Hub_Prod\\top20hub-parent\\top20hub-web\\src\\main\\webapp\\Resources\\img\\field\\";
+	
 	@Autowired
 	FieldBO fieldService;
 		

@@ -3,10 +3,11 @@ package com.kj.top20hub.web.controller;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.security.Principal;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,7 +33,8 @@ public class ContentController {
 	
 	private static String TEMP_FOLDER = "C:\\Users\\js185506\\Desktop\\t20code\\Top20Hub_Prod\\top20hub-parent\\top20hub-web\\src\\main\\webapp\\Resources\\img\\content\\";
 
-
+	private Logger log = Logger.getLogger(ContentController.class);
+	
 	@Autowired
 	private ContentBO contentbo;
 
@@ -83,6 +85,7 @@ public class ContentController {
 	@PostMapping(value="/")
 	public ResponseEntity<Object> createContent(@RequestBody Content content)
 	{
+//		log.info(principal.getName());		
 		int result = contentbo.createContent(content);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(result).toUri();
 		return ResponseEntity.created(location).build();		

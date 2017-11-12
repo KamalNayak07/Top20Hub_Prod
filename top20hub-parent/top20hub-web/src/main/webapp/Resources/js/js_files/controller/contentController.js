@@ -26,7 +26,7 @@
          			},	
      				user:
      				{
-     					user_id : 7
+     					user_id : 18
      				}
      			};
      			
@@ -62,7 +62,6 @@
      			}
 
      			function createContent(content) {
-     				self.content.content_url= "\\Resources\\img\\content\\"+self.content.content_image.name;
      				console.log(content);     					
      				contentService.createContent(content).then(function(success) {
      					alert("content has been created!");
@@ -75,10 +74,10 @@
      			function submit() {
      				console.log("content_id " + self.content.content_id);
      				console.log("topic_id " + self.content.topic.topic_id);
-     				self.content.content_url= "\\Resources\\img\\content\\"+self.content.content_image.name;
-
+     		
      				if (self.content.content_id === null) {
      					console.log('Saving New Content', self.content.content_id);
+     					self.content.content_url= "\\Resources\\img\\content\\"+self.content.content_image.name;         				
      					createContent(self.content);
      					uploadFile();
      				} else {     					

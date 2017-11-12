@@ -1,4 +1,4 @@
-	<div class="container-fluid" ng-controller="userController as ctrl">
+	<div class="container" ng-controller="userController as ctrl">
 		<!-- <div class="panel panel-default">
 
 			<div class="panel-heading">

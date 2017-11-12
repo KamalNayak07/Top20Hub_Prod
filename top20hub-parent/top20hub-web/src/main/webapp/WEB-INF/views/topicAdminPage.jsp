@@ -64,6 +64,7 @@
 			<!-- Default panel contents -->
 			<div class="panel-heading">
 				<span class="lead">List of Topics :{{ctrl.topics.length}} </span>
+				<span class="lead" style="float: right">Search Topic <input type="text" ng-model = "ctrl.searchText"/></span>
 			</div>
 			<div class="container">
 				<table class="table table-hover">

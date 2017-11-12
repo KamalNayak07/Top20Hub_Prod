@@ -32,6 +32,9 @@ public class Content implements Serializable {
 	private String description;
 
 	@Column
+	private String content_url;
+	
+	@Column
 	private String links;
 
 	@Column
@@ -60,6 +63,14 @@ public class Content implements Serializable {
 		this.contentMediaId = contentMediaId;
 		this.user = user;
 		this.topic = topic;
+	}
+
+	public String getContent_url() {
+		return content_url;
+	}
+
+	public void setContent_url(String content_url) {
+		this.content_url = content_url;
 	}
 
 	public int getContent_id() {

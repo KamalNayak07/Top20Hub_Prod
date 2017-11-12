@@ -1,5 +1,5 @@
 
-<div class="container-fluid" ng-controller="fieldController as ctrl">
+<div class="container" ng-controller="fieldController as ctrl">
 	<div class="panel panel-default">
 
 		<div class="panel-heading">
@@ -56,6 +56,7 @@
 		<!-- Default panel contents -->
 		<div class="panel-heading">
 			<span class="lead">List of Fields :{{ctrl.fields.length}} </span>
+			<span class="lead" style="float: right">Search Field <input type="text" ng-model = "ctrl.searchText"/></span>
 		</div>
 		<div class="container">
 			<table class="table table-hover">
@@ -77,8 +78,12 @@
 							src="${pageContext.request.contextPath}{{u.field_url}}"
 							align="middle" height="200" width="300" /></td>
 						<td>
-							<button type="button" ng-click="ctrl.editField(u.field_id)"
+								<button type="button" ng-click="ctrl.editField(u.field_id)"
 								class="btn btn-success custom-width">Edit</button>
+								&nbsp&nbsp							
+								<button type="button" ng-click="ctrl.remove(u.field_id)"
+								class="btn btn-danger custom-width">Remove</button>
+								
 						</td>
 					</tr>
 				</tbody>

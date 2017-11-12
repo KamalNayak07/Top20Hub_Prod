@@ -1,5 +1,5 @@
 
-<div class="container-fluid" ng-controller="contactController as ctrl">
+<div class="container" ng-controller="contactController as ctrl">
 	<div class="panel panel-default">
 		<!-- Default panel contents -->
 		<div class="panel-heading">
