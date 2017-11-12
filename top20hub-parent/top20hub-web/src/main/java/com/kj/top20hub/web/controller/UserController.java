@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
@@ -112,6 +114,20 @@ public class UserController {
 		int result = contactUsService.create(contactUs);
 
 		return result;
+	}
+	
+	
+	@GetMapping("/getUsername")
+	public String getUserName() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String username = authentication.getName();
+		log.info("Current User is : " + username);
+
+		if (username.equalsIgnoreCase("anonymousUser"))
+			return "Guest";
+		else
+			return username;
+
 	}
 
 }
