@@ -26,6 +26,7 @@
 
 </head>
 <body>
+	<div class="container">
 
 	<H1>&nbsp&nbsp&nbspWelcome to Contact Us Page</H1>
 	<div class="panel-body" ng-controller="contactController as ctrl">
@@ -35,34 +36,29 @@
 
 			<div class="form-group">
 				<label for="Username" class="col-md-3 control-label">Name</label>
-				<div class="col-md-9">
 					<input type="text" class="form-control" name="name"
 						ng-model="ctrl.contact.name" placeholder="Name">
-				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="Message" class="col-md-3 control-label">Message</label>
-				<div class="col-md-9">
-					<input type="text" class="form-control" name="message"
-						ng-model="ctrl.contact.message" placeholder="Message">
-				</div>
+					<textarea rows="5" cols="" class="form-control" name="message"
+						ng-model="ctrl.contact.message" placeholder="Message"></textarea>
+				
+					<!-- <input type="text" class="form-control" name="message"
+						ng-model="ctrl.contact.message" placeholder="Message" height="500"width="300"> -->
 			</div>
 
 			<div class="form-group">
 				<label for="email" class="col-md-3 control-label">Email</label>
-				<div class="col-md-9">
 					<input type="text" class="form-control" name="email"
 						ng-model="ctrl.contact.email" placeholder="email">
-				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="phone" class="col-md-3 control-label">Phone</label>
-				<div class="col-md-9">
 					<input type="text" class="form-control" name="phone"
 						ng-model="ctrl.contact.phone" placeholder="Phone">
-				</div>
 			</div>
 		
 			<div class="form-group">
@@ -80,6 +76,7 @@
 			</div>
 
 		</form>
+	</div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>

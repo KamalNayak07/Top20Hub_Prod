@@ -94,8 +94,6 @@ public class FieldController {
 	}
 	
     
-    
-	
 	@PutMapping("/updateField")
 	public void updateField(@RequestBody Field field)
 	{

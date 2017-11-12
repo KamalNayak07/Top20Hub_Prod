@@ -42,7 +42,6 @@ public class Topic implements Serializable {
 	public Topic() {
 	}
 
-
 	public Topic(String subject, String topic_url, Field field) {
 		this.subject = subject;
 		this.topic_url = topic_url;

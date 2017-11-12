@@ -3,7 +3,9 @@
 app.controller('contactController', [
 		'$scope',
 		'contactService',
-		function($scope, contactService) {
+		'$modal',
+		'$log',
+		function($scope,contactService,$modal,$log) {
 
 			var self = this;
 
@@ -19,6 +21,7 @@ app.controller('contactController', [
 			self.remove = remove;
 			self.submit = submit;
 			self.reset = reset;
+			self.openReplyModal = openReplyModal;
 			
 			self.searchText = '';
 
@@ -77,5 +80,27 @@ app.controller('contactController', [
 				};
 				$scope.myForm.$setPristine(); //reset Form
 			}
+			
+			function openReplyModal(name, email){
+				console.log("Inside openReplyMethod - Name: "+name+" email: "+email)
+				
+				var modalInstance = $modal.open({
+				      templateUrl: 'admin/replyContact',
+				      controller: 'replyController',
+				      resolve: {
+				        name : function() {
+				          return name;
+				        },
+				        email : function() {
+					          return email;
+					        }
+				
+				      }
+				    });
+				
+				
+			}
+			
+			
 
 		} ]);
