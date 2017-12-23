@@ -70,6 +70,7 @@
 					</tr>
 				</thead>
 				<tbody>
+				
 					<tr ng-repeat="u in ctrl.fields | filter : ctrl.searchText">
 						<td><span ng-bind="u.field_id"></span></td>
 						<td><span ng-bind="u.field_desc"></span></td>

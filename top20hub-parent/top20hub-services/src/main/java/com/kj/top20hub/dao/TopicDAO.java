@@ -16,6 +16,8 @@ public interface TopicDAO {
 
 	public void deleteTopic(int id);
 
+	public List<Topic> getAllTopicsbyFieldId(int field_id);
+
 
 	
 	

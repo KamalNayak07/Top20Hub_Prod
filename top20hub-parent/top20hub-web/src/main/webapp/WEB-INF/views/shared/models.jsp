@@ -73,7 +73,7 @@
 				<div class="modal-body">
 
 					<div class="interest-content">
-						<div w3-include-html=${content}/interest.html"></div>
+						<div w3-include-html=${content}/interest.html></div>
 						<br />
 						<button
 							class="btn btn-primary waves-effect waves-light first-button pull-right"

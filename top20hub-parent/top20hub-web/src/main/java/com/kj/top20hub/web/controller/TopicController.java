@@ -49,7 +49,19 @@ public class TopicController {
 		}		
 		return AllTopicsList;
 	}
-		
+
+	@GetMapping("/getAllTopicsbyFieldId/{field_id}")
+	public List<Topic> getAllTopicsbyFieldId(@PathVariable int field_id)
+	{
+		List<Topic> AllTopicsListbyfieldId = topicService.getAllTopicsbyFieldId(field_id);
+		if(AllTopicsListbyfieldId.size()==0)
+		{
+		 	throw new UserNotFoundException("No topic available by field id");
+		}		
+		return AllTopicsListbyfieldId;
+	}
+	
+	
 	@GetMapping("/{id}")
 	public Topic getTopic(@PathVariable int id)
 	{		

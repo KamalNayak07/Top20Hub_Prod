@@ -22,7 +22,7 @@
 				<li class="nav-item"><a class="nav-link" data-toggle="modal"
 					href="#aboutusModal">About us</a></li>
 				<li class="nav-item"><a class="nav-link" target="_blank"
-					href="${context}/topAuthers.html">Top 20 Authers</a></li>
+					href="${content}/topAuthers.html">Top 20 Authors</a></li>
 			</ul>
 			<ul>
 				<li class="nav-item pull-right">

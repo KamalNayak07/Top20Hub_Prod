@@ -4,10 +4,13 @@
      		'$scope',
      		'fieldService',
      		'fileUpload',
-     		function($scope,fieldService,fileUpload) {
-
+     		'topicService',
+     		function($scope,fieldService,fileUpload,topicService) {
+     			
      			var self = this;
 
+     			self.show = 1;     			
+     			
      			self.field = {
      				field_id : null,     			
      				field_desc : '',
@@ -15,7 +18,17 @@
      			    field_url : ''	
      			};
      			
+     			self.topic = {
+         				topic_id : null,     			
+         				subject : '',
+         			    topic_image :'',
+         			    topic_url : '',
+     			}     			
+     			
+     			self.setTopic = 0;
+     			
      			self.fields = [];
+     			self.topics = [];
      			self.submit = submit;
      			self.reset = reset;
      			self.updateField = updateField;
@@ -23,9 +36,11 @@
      			self.uploadFile = uploadFile;
      			self.editField = editField;
      			self.remove= remove;
+     			self.getTopicbyFieldId = getTopicbyFieldId;
      			
      			fetchAllFields();
 
+     			     			
      			function fetchAllFields() {
      				fieldService.fetchAllFields().then(function(d) {
      					console.log(d);
@@ -111,6 +126,18 @@
      					field_image : ''
      				};
      				$scope.myForm.$setPristine(); // reset Form
+     			}
+     			
+     			
+     			
+     			function getTopicbyFieldId(field_id)
+     			{
+     				topicService.fetchAllTopicsbyFieldId(field_id).then(function(d) {
+     					self.topics=d;
+     					console.log(d);
+     				}, function(errResponse) {
+     					console.error('Error while fetching topics by field_id');
+     				});
      			}
 
      		} ]);   

@@ -59,4 +59,15 @@ public class TopicDAOImpl implements TopicDAO {
 		currentSession.delete(topic);
 	}
 
+	@Override
+	public List<Topic> getAllTopicsbyFieldId(int field_id) {
+		Session currentSession = null;
+		currentSession = sessionfactory.getCurrentSession();
+		Query<Topic> query = currentSession.createQuery("from Topic where field_id=:par",Topic.class);
+		query.setParameter("par", field_id);
+		List<Topic> AllTopicsListbyFieldId = query.getResultList();
+		
+		return AllTopicsListbyFieldId;
+	}
+
 }

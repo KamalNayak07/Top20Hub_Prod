@@ -6,7 +6,7 @@
      		'fileUpload',
      		'fieldService',
      		function($scope,topicService,fileUpload,fieldService) {
-
+     		     		
      			var self = this;
 
      			self.topic = {
@@ -36,7 +36,6 @@
 
      			function fetchAllFields(){
  				fieldService.fetchAllFields().then(function(d) {
- 					console.log("field data :"+d);
  					self.fields = d;
 
  				}, function(errResponse) {

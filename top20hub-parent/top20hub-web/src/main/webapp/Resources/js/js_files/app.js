@@ -7,7 +7,8 @@ app.config([ '$routeProvider',
                   function($routeProvider) {
 
                   	// Define routes 
-                  	$routeProvider.when('/users', {
+                  	$routeProvider
+                  	.when('/users', {
                   		templateUrl : 'admin/userDetails',
                   		controller : 'userController'
                   	}).

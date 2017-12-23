@@ -3,16 +3,35 @@ app.factory('topicService', ['$http','$q',function($http,$q){
 	var Rest_topic = 'http://localhost:8081/top20hub-web/topic/';
 	var Rest_deletetopic = 'http://localhost:8081/top20hub-web/topic/deleteTopic/';
 	var Rest_updateTopic = 'http://localhost:8081/top20hub-web/topic/updateTopic/';
+	var Rest_getAllTopicsbyFieldId = 'http://localhost:8081/top20hub-web/topic/getAllTopicsbyFieldId/';
 		
 	var factory = {
 			fetchAllTopics: fetchAllTopics,
 			createTopic: createTopic,
 			updateTopic: updateTopic,
-			deleteTopic: deleteTopic			
+			deleteTopic: deleteTopic,	
+			fetchAllTopicsbyFieldId : fetchAllTopicsbyFieldId
 	}
 	return factory;
 	
-	 function fetchAllTopics() {
+	
+	function fetchAllTopicsbyFieldId(field_id) {
+		var deferred = $q.defer();
+		$http.get(Rest_getAllTopicsbyFieldId+field_id)
+		.then(
+				function (response) {
+	                deferred.resolve(response.data);
+	            },
+	            function(errResponse){
+	                console.error('Error while fetching Topics by Field_id');
+	                deferred.reject(errResponse);
+	            }
+	        );
+	        return deferred.promise;
+	    }
+	 
+	
+	function fetchAllTopics() {
 	        var deferred = $q.defer();
 	        $http.get(Rest_topic)
 	            .then(

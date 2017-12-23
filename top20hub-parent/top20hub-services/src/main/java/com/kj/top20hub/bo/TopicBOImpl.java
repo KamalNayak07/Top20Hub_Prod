@@ -45,5 +45,11 @@ public class TopicBOImpl implements TopicBO {
 		topicdao.deleteTopic(id);
 	}
 
+	@Override
+	@Transactional
+	public List<Topic> getAllTopicsbyFieldId(int field_id) {
+		return topicdao.getAllTopicsbyFieldId(field_id);
+	}
+
 
 }
