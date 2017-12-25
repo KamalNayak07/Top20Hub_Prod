@@ -224,28 +224,35 @@
 		<div ng-controller="contentController as contentctrl">
 
 			<div class="single-article" ng-show="ctrl.show==4" ng-cloak>
+						
+
 				<!-- <div w3-include-html="${content}/articleSubmission.html"></div> -->
 				<form class="form-horizontal">
+					
 					<div class="form-group">
-						<div class="col-sm-10">
-							<input type="text" ng-model="contentctrl.content.title"
-								class="form-control" id="title" placeholder="Content's Title"
+					<label class="control-label col-sm-2" for="pwd">Content's Title	</label>
+						&nbsp&nbsp	<input type="text" ng-model="contentctrl.content.title"
+								class="form-control" id="title" placeholder=""
 								required ng-minlength="3" />
-						</div>
+					
 					</div>
 
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="pwd">Description
 						</label>
-				 		 <summernote ng-model="description"></summernote>  
+						<div>
+				 		 <textarea type="text" ng-model="contentctrl.content.description"></textarea>
+				 		 </div>  
 			 		<!-- 	<div class="summernote" id="summernote"
 							ng-model="contentctrl.content.description" /> 
-			 -->		</div>
-				{{description}}
-                 {{contentctrl.content.description}}
+							
+			 -->		
+			       </div>
+               
 					<div class="form-group">
 						<label class="control-label col-sm-4" for="pwd">Content's
-							Images</label> <input type="file"
+							Images</label> 
+						<input type="file"
 							file-model="contentctrl.content.content_image" id="image"
 							class="form-control input-sm" placeholder="Content's image" />
 					</div>
