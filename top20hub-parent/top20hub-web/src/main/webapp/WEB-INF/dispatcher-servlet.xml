@@ -34,9 +34,9 @@
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/top20hub_db?useSSL=false" />
-		<property name="user" value="devuser" />
-		<property name="password" value="Top20tower@" />
+			value="jdbc:mysql://top20hubdb.cyzdfotaw7ki.ap-south-1.rds.amazonaws.com:3306/top20hub_db?useSSL=false" />
+		<property name="user" value="Top20hub" />
+		<property name="password" value="Top20tower" />
 
 		<!-- these are connection pool properties for C3P0 -->
 		<property name="minPoolSize" value="5" />
