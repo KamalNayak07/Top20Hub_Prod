@@ -80,7 +80,7 @@
      	  //       file.name = self.field.field_desc;
      	           console.log('file is ' );
      	           console.dir(file);
-     	           var uploadUrl = "http://localhost:8081/top20hub-web/field/fieldImage/";
+     	           var uploadUrl = "/field/fieldImage/";
      	           fileUpload.uploadFileToUrl(file, uploadUrl);
      	        }
      			

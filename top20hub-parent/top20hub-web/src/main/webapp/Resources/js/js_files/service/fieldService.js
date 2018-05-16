@@ -1,8 +1,8 @@
 app.factory('fieldService', ['$http','$q',function($http,$q){
 	
-	var Rest_field = 'http://localhost:8081/top20hub-web/field/';
-	var Rest_deletefield = 'http://localhost:8081/top20hub-web/field/deleteField/';
-	var Rest_updateField = 'http://localhost:8081/top20hub-web/field/updateField/';
+	var Rest_field = '/field/';
+	var Rest_deletefield = '/field/deleteField/';
+	var Rest_updateField = '/field/updateField/';
 		
 	var factory = {
 			fetchAllFields: fetchAllFields,

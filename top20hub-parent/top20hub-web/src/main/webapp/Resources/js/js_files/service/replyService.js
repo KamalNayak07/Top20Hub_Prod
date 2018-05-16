@@ -1,7 +1,7 @@
 app.factory('replyService', ['$http','$q',function($http,$q){
 	
 	
-	var Rest_User = 'http://localhost:8081/top20hub-web/sendMessage/';
+	var Rest_User = '/sendMessage/';
 	
 	var factory = {
 			replyEmail : replyEmail

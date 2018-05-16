@@ -83,7 +83,7 @@
      	           var file = self.topic.topic_image;
      	           console.log('file is ' );
      	           console.dir(file);
-     	           var uploadUrl = "http://localhost:8081/top20hub-web/topic/topicImage/";
+     	           var uploadUrl = "/topic/topicImage/";
      	           fileUpload.uploadFileToUrl(file, uploadUrl);
      	        }
      			

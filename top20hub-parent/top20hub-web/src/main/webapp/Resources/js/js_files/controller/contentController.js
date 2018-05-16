@@ -91,7 +91,7 @@
      	           var file = self.content.content_image;
      	           console.log('file is ' );
      	           console.dir(file);
-     	           var uploadUrl = "http://localhost:8081/top20hub-web/content/contentImage/";
+     	           var uploadUrl = "/content/contentImage/";
      	           fileUpload.uploadFileToUrl(file, uploadUrl);
      	        }
      			

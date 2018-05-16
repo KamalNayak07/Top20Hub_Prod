@@ -76,9 +76,9 @@ public class FieldController {
 		String pathDirectory = "Resources\\img\\field\\";
 		try {
 		  // local folder for testing file upload  	
-			file.transferTo(new File(TEMP_FOLDER + file.getOriginalFilename()));
+		  //  file.transferTo(new File(TEMP_FOLDER + file.getOriginalFilename()));
 		  // specfic location as per project   
-		  // file.transferTo(new File(root + pathDirectory + file.getOriginalFilename()));
+		   file.transferTo(new File(root + pathDirectory + file.getOriginalFilename()));
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

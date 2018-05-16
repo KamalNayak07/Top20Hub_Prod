@@ -1,6 +1,6 @@
 app.factory('userService', ['$http','$q',function($http,$q){
 	
-	var Rest_User = 'http://localhost:8081/top20hub-web/users/';
+	var Rest_User = '/users/';
 	
 	var factory = {
 			fetchAllUsers: fetchAllUsers,

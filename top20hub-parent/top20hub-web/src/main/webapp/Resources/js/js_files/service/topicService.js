@@ -1,9 +1,9 @@
 app.factory('topicService', ['$http','$q',function($http,$q){
 	
-	var Rest_topic = 'http://localhost:8081/top20hub-web/topic/';
-	var Rest_deletetopic = 'http://localhost:8081/top20hub-web/topic/deleteTopic/';
-	var Rest_updateTopic = 'http://localhost:8081/top20hub-web/topic/updateTopic/';
-	var Rest_getAllTopicsbyFieldId = 'http://localhost:8081/top20hub-web/topic/getAllTopicsbyFieldId/';
+	var Rest_topic = '/topic/';
+	var Rest_deletetopic = '/topic/deleteTopic/';
+	var Rest_updateTopic = '/topic/updateTopic/';
+	var Rest_getAllTopicsbyFieldId = '/topic/getAllTopicsbyFieldId/';
 		
 	var factory = {
 			fetchAllTopics: fetchAllTopics,

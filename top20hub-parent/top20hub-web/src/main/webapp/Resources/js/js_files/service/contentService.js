@@ -1,8 +1,8 @@
 app.factory('contentService', ['$http','$q',function($http,$q){
 	
-	var Rest_content = 'http://localhost:8081/top20hub-web/content/';
-	var Rest_deletecontent = 'http://localhost:8081/top20hub-web/content/deleteContent/';
-	var Rest_updateContent = 'http://localhost:8081/top20hub-web/content/updateContent/';
+	var Rest_content = '/content/';
+	var Rest_deletecontent = '/content/deleteContent/';
+	var Rest_updateContent = '/content/updateContent/';
 		
 	var factory = {
 			fetchAllContents: fetchAllContents,
