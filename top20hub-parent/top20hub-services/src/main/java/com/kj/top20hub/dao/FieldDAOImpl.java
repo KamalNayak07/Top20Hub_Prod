@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kj.top20hub.dto.Field;
-import com.kj.top20hub.dto.Topic;
 
 @Repository
 public class FieldDAOImpl implements FieldDAO {
@@ -56,5 +55,28 @@ public class FieldDAOImpl implements FieldDAO {
 		currentSession.delete(field);
 	}
 
+	@Override
+	public List<Object[]> getAllFieldsbyCount() {
+		Session currentSession = null;
+		String hql = "select f.field_desc, count(ft) from Field f left join f.topic as ft group by f.field_id";
+				
+		currentSession =  sessionfactory.getCurrentSession();
+		
+		Query query = currentSession.createQuery(hql);
 
+		List<Object[]> users= (List<Object[]>)query.getResultList();
+		   
+		for(Object[] user: users){
+		 
+	        String name = (String)user[0];
+		 
+		        System.out.println(name);
+				Long id = (Long)user[1];
+		 	 
+		        System.out.println(id);
+		 
+		    }
+		
+		return users;		
+	}
 }

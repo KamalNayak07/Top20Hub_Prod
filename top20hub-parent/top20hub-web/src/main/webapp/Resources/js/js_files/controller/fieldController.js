@@ -15,7 +15,7 @@
      				field_id : null,     			
      				field_desc : '',
      			    field_image :'',
-     			    field_url : ''	
+     			    field_url : ''     			    	
      			};
      			
      			self.topic = {
@@ -23,12 +23,15 @@
          				subject : '',
          			    topic_image :'',
          			    topic_url : '',
-     			}     			
+     			};     			
      			
      			self.setTopic = 0;
      			
+     			self.fieldcategory = ["",""];
+     		     			
      			self.fields = [];
      			self.topics = [];
+     			self.fieldcategorys = [];
      			self.submit = submit;
      			self.reset = reset;
      			self.updateField = updateField;
@@ -39,8 +42,19 @@
      			self.getTopicbyFieldId = getTopicbyFieldId;
      			
      			fetchAllFields();
+     			fetchAllFieldsbyCount();
 
-     			     			
+     			function fetchAllFieldsbyCount() {
+     				fieldService.fetchAllFieldsbyCount().then(function(d) {
+     					console.log(d);
+     					self.fieldcategorys = d;
+
+     				}, function(errResponse) {
+     					console.error('Error while fetching Fields by count');
+     				});
+     			}
+     			
+     			
      			function fetchAllFields() {
      				fieldService.fetchAllFields().then(function(d) {
      					console.log(d);

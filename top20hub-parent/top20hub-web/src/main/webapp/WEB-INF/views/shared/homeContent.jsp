@@ -1,12 +1,11 @@
- 
    <!-- Main layout -->
    <main>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <!--   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <!-- Links -->
+                Links
                 <ul class="navbar-nav mr-auto">
-                    <!-- Dropdown -->
+                    Dropdown
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Homepages</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -18,7 +17,7 @@
                         </div>
                     </li>
 
-                    <!-- Dropdown -->
+                    Dropdown
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Postpages</a>
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -31,18 +30,18 @@
                     </li>
 
                 </ul>
-                <!-- Links -->
+                Links
 
-                <!-- Search form -->
+                Search form
                 <form class="form-inline">
                     <div class="md-form my-0">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                     </div>
                 </form>
             </div>
-            <!-- Collapsible content -->
+            Collapsible content
  
-
+ -->
          <div class="container">
 
             <!-- Magazine -->
@@ -54,7 +53,7 @@
                     <!--Section: Magazine posts-->
                     <section class="section extra-margins listing-section mt-2">
 
-                        <h4 class="font-weight-bold"><strong>LATESTS ARTICLE</strong></h4>
+                        <h4 class="font-weight-bold"><strong>LATEST ARTICLES</strong></h4>
                         <hr class="red title-hr">
 
                         <!--Grid row-->
@@ -477,45 +476,31 @@
 
                 <!-- Sidebar -->
                 <div class="col-xl-3 col-md-12 widget-column mt-0">
+      <div ng-app="top20hubApp">
+	     <div ng-controller="fieldController as ctrll">
 
                     <!-- Section: Categories -->
                     <section class="section mb-5">
 
                         <h4 class="font-weight-bold mt-2"><strong>CATEGORIES</strong></h4>
                         <hr class="red title-hr">
-
+                    	
                         <ul class="list-group z-depth-1 mt-4">
+                        
+         <div ng-repeat="ub in ctrll.fieldcategorys">
+			                                                        
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a>Business</a>
-                                <span class="badge badge-danger badge-pill">4</span>
+                                <a>{{ub[0]}}</a>
+                                <span class="badge badge-danger badge-pill">{{ub[1]}}</span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a>Entertainment</a>
-                                <span class="badge badge-danger badge-pill">2</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a>Health</a>
-                                <span class="badge badge-danger badge-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a>Lifestyle</a>
-                                <span class="badge badge-danger badge-pill">2</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a>Photography</a>
-                                <span class="badge badge-danger badge-pill">1</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a>Technology</a>
-                                <span class="badge badge-danger badge-pill">2</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a>Sport</a>
-                                <span class="badge badge-danger badge-pill">5</span>
-                            </li>
-                        </ul>
+                            
+                    </div>        
+           </ul>
                     </section>
-                    <!-- Section: Categories -->
+</div>
+</div>                    
+
+<!-- Section: Categories -->
                  
                    <!-- Section: Newsletter -->
                     <section class="section mt-5">

@@ -8,6 +8,8 @@ import com.kj.top20hub.dto.Field;
 public interface FieldBO {
 
 	public List<Field> getAllFields();
+	
+	public List<Object[]> getAllFieldsbyCount();
 
 	public Field getField(int id);
 

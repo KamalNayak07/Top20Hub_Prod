@@ -47,6 +47,40 @@
 <!-- Landing page CSS -->
 <link href="${css}/home.css" rel="stylesheet">
 
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+
+<script
+	src="http://labs.sideeffect.kr/2014/angular-summernote/v0.3.2/dist/angular-summernote.min.js"></script>
+
+<script
+	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script
+	src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+<script src="<c:url value='/Resources/js/js_files/app.js' />"></script>
+
+<script src="<c:url value='/Resources/js/jquery-3.1.1.min.js'/>"></script>
+<script src="<c:url value='/Resources/js/bootstrap.min.js'/>"></script>
+<script
+	src="<c:url value='/Resources/js/js_files/controller/contentController.js' />"></script>
+<script
+	src="<c:url value='/Resources/js/js_files/service/contentService.js' />"></script>
+<script
+	src="<c:url value='/Resources/js/js_files/controller/topicController.js' />"></script>
+<script
+	src="<c:url value='/Resources/js/js_files/service/topicService.js' />"></script>
+
+<script
+	src="<c:url value='/Resources/js/js_files/service/fieldService.js' />"></script>
+<script
+	src="<c:url value='/Resources/js/js_files/controller/fieldController.js' />"></script>
+<script
+	src="<c:url value='/Resources/js/js_files/service/fileUpload.js' />"></script>
+<script
+	src="<c:url value='/Resources/js/js_files/directives/fileModel.js' />"></script>
+
+
+
 
 </head>
 <body>

@@ -1,6 +1,7 @@
 app.factory('fieldService', ['$http','$q',function($http,$q){
 	
 	var Rest_field = '/field/';
+	var Rest_field_by_Count = '/field/field_by_Count/';
 	var Rest_deletefield = '/field/deleteField/';
 	var Rest_updateField = '/field/updateField/';
 		
@@ -8,9 +9,25 @@ app.factory('fieldService', ['$http','$q',function($http,$q){
 			fetchAllFields: fetchAllFields,
 			createField: createField,
 			updateField: updateField,
-			deleteField: deleteField			
+			deleteField: deleteField,	
+			fetchAllFieldsbyCount: fetchAllFieldsbyCount
 	}
 	return factory;
+	
+	function fetchAllFieldsbyCount() {
+        var deferred = $q.defer();
+        $http.get(Rest_field_by_Count)
+            .then(
+            function (response) {
+                deferred.resolve(response.data);
+            },
+            function(errResponse){
+                console.error('Error while fetching Fields');
+                deferred.reject(errResponse);
+            }
+        );
+        return deferred.promise;
+    }	
 	
 	 function fetchAllFields() {
 	        var deferred = $q.defer();

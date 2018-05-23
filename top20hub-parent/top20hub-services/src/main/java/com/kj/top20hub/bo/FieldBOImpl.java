@@ -1,5 +1,6 @@
 package com.kj.top20hub.bo;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,12 @@ public class FieldBOImpl implements FieldBO {
 	@Transactional
 	public void deleteField(int id) {
 		fielddao.deleteField(id);
+	}
+
+	@Override
+	@Transactional
+	public List<Object[]> getAllFieldsbyCount() {
+		return fielddao.getAllFieldsbyCount();
 	}
 
 

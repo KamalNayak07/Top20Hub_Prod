@@ -3,6 +3,7 @@ package com.kj.top20hub.web.controller;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -44,6 +45,18 @@ public class FieldController {
 		}		
 		return AllFieldsList;
 	}
+	
+	@GetMapping("/field_by_Count")
+	public List<Object[]> getAllFieldsbyCount()
+	{
+		List<Object[]> AllFieldsListbyCount = fieldService.getAllFieldsbyCount();
+		if(AllFieldsListbyCount.size()==0)
+		{
+		 	throw new UserNotFoundException("No field available by count");
+		}		
+		return AllFieldsListbyCount;
+	}
+	
 		
 	@GetMapping("/{id}")
 	public Field getField(@PathVariable int id)
