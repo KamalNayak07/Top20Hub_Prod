@@ -52,4 +52,10 @@ public class HomeController {
 	{
 		return "topic";
 	}
+	
+	@RequestMapping("/topicSorted")
+	public String TopicSorted()
+	{
+		return "topicSorted";
+	}
 }

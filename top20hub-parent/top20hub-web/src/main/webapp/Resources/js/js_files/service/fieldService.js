@@ -1,7 +1,7 @@
 app.factory('fieldService', ['$http','$q',function($http,$q){
 	
-	var Rest_field = '/field/';
-	var Rest_field_by_Count = '/field/field_by_Count/';
+	var Rest_field = 'http://localhost:8081/top20hub-web/field/';
+	var Rest_field_by_Count = 'http://localhost:8081/top20hub-web/field/field_by_Count/';
 	var Rest_deletefield = '/field/deleteField/';
 	var Rest_updateField = '/field/updateField/';
 		

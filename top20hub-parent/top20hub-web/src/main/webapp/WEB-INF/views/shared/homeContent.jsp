@@ -1,66 +1,22 @@
    <!-- Main layout -->
    <main>
-
-  <!--   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                Links
-                <ul class="navbar-nav mr-auto">
-                    Dropdown
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Homepages</a>
-                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="../homepage/v-1.html">V1</a>
-                            <a class="dropdown-item" href="../homepage/v-2.html">V2</a>
-                            <a class="dropdown-item" href="../homepage/v-3.html">V3</a>
-                            <a class="dropdown-item" href="../homepage/v-4.html">V4</a>
-                            <a class="dropdown-item" href="../homepage/v-5.html">V5</a>
-                        </div>
-                    </li>
-
-                    Dropdown
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Postpages</a>
-                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="../postpage/v-1.html">V1</a>
-                            <a class="dropdown-item" href="../postpage/v-2.html">V2</a>
-                            <a class="dropdown-item" href="../postpage/v-3.html">V3</a>
-                            <a class="dropdown-item" href="../postpage/v-4.html">V4</a>
-                            <a class="dropdown-item" href="../postpage/v-5.html">V5</a>
-                        </div>
-                    </li>
-
-                </ul>
-                Links
-
-                Search form
-                <form class="form-inline">
-                    <div class="md-form my-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    </div>
-                </form>
-            </div>
-            Collapsible content
- 
- -->
-         <div class="container">
+         <div class="container-fluid">
 
             <!-- Magazine -->
             <div class="row mt-1">
 
                 <!-- Main news -->
-                <div class="col-xl-7 col-md-12">
+                <div class="col-xl-9 col-md-12">
 
                     <!--Section: Magazine posts-->
                     <section class="section extra-margins listing-section mt-2">
 
                         <h4 class="font-weight-bold"><strong>LATEST ARTICLES</strong></h4>
                         <hr class="red title-hr">
-
                         <!--Grid row-->
                         <div class="row mb-4">
-
                             <!--Grid column-->
-                            <div class="col-md-4 my-3">
+                            <div class="col-md-4">
                                 <!--Card-->
                                 <div class="card">
 
@@ -76,10 +32,10 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
-                                        <hr>
+                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
+                                       <hr>
                                         <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
                                             content.
                                         </p>
                                         <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
@@ -95,7 +51,7 @@
                             <!--Grid column-->
 
                             <!--Grid column-->
-                            <div class="col-md-4 text-left mt-3">
+                            <div class="col-md-4 text-left">
 
                                 <!--Card-->
                                 <div class="card">
@@ -112,10 +68,10 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
+                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
                                         <hr>
                                         <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
                                             content.
                                         </p>
                                         <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
@@ -130,7 +86,7 @@
                             <!--Grid column-->
 
                             <!--Grid column-->
-                            <div class="col-md-4 text-left mt-3">
+                            <div class="col-md-4 text-left">
 
                                 <!--Card-->
                                 <div class="card">
@@ -147,10 +103,10 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
+                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
                                         <hr>
                                         <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
                                             content.
                                         </p>
                                         <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
@@ -172,7 +128,7 @@
                         <div class="row mb-4">
 
                             <!--Grid column-->
-                            <div class="col-md-6 text-left mt-3">
+                            <div class="col-md-6 text-left">
 
                                 <!--Card-->
                                 <div class="card">
@@ -189,10 +145,10 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
+                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
                                         <hr>
                                         <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
                                             content.
                                         </p>
                                         <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
@@ -208,7 +164,7 @@
 
 
                             <!--Grid column-->
-                            <div class="col-md-6 text-left mt-3">
+                            <div class="col-md-6 text-left">
 
                                 <!--Card-->
                                 <div class="card">
@@ -225,10 +181,10 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
+                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
                                         <hr>
                                         <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
                                             content.
                                         </p>
                                         <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
@@ -268,10 +224,10 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
+                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
                                         <hr>
                                         <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
                                             content.
                                         </p>
                                         <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
@@ -304,10 +260,10 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
+                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
                                         <hr>
                                         <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
                                             content.
                                         </p>
                                         <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
@@ -339,10 +295,10 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
+                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
                                         <hr>
                                         <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
                                             content.
                                         </p>
                                         <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
@@ -358,87 +314,6 @@
 
                         </div>
                         <!--/Grid row-->
-
-                        <h4 class="font-weight-bold mt-5"><strong>LIFESTYLE</strong></h4>
-                        <hr class="red title-hr">
-
-                        <!--Grid row-->
-                        <div class="row single-post mb-4">
-
-                            <!--Grid column-->
-                            <div class="col-md-6 text-left mt-3">
-
-                                <!--Card-->
-                                <div class="card">
-
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(12).jpg" class="card-img-top" alt="Sample image">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
-                                        <p class="font-small grey-text mb-0">Anna Smith</p>
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-
-                            <!--Grid column-->
-                            <div class="col-md-6 text-left mt-3">
-
-                                <!--Card-->
-                                <div class="card">
-
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(3).jpg" class="card-img-top" alt="sample image">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title"><strong>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
-                                        <p class="font-small grey-text mb-0">Anna Smith</p>
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-                        </div>
-                        <!--/Grid row-->
-
                     </section>
                     <!--/Section: Magazine posts-->
 
@@ -475,12 +350,12 @@
                 <!--/ Main news -->
 
                 <!-- Sidebar -->
-                <div class="col-xl-3 col-md-12 widget-column mt-0">
+                <div class="col-xl-3 col-md-12 widget-column">
       <div ng-app="top20hubApp">
 	     <div ng-controller="fieldController as ctrll">
 
                     <!-- Section: Categories -->
-                    <section class="section mb-5">
+                    <section class="section">
 
                         <h4 class="font-weight-bold mt-2"><strong>CATEGORIES</strong></h4>
                         <hr class="red title-hr">
@@ -490,7 +365,7 @@
          <div ng-repeat="ub in ctrll.fieldcategorys">
 			                                                        
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a>{{ub[0]}}</a>
+                                <a href ="./topicSorted" target="_blank">{{ub[0]}}</a>
                                 <span class="badge badge-danger badge-pill">{{ub[1]}}</span>
                             </li>
                             
@@ -505,7 +380,7 @@
                    <!-- Section: Newsletter -->
                     <section class="section mt-5">
                         <h4 class="font-weight-bold"><strong>NEWSLETTER</strong></h4>
-                        <hr class="red title-hr mb-4">
+                        <hr class="red title-hr">
 
                         <!-- Newsletter -->
                         <div class="card z-depth-1 widget-spacing mt-0">
