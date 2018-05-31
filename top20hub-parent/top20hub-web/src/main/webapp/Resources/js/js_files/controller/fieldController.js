@@ -9,8 +9,8 @@
      			
      			var self = this;
 
-     			self.show = 1;     			
-     			
+     			self.show = 1;    
+     		     		     		
      			self.field = {
      				field_id : null,     			
      				field_desc : '',
@@ -27,7 +27,7 @@
      			
      			self.setTopic = 0;
      			
-     			self.fieldcategory = ["",""];
+     			self.fieldcategory = ["","",""];
      		     			
      			self.fields = [];
      			self.topics = [];
@@ -43,11 +43,11 @@
      			
      			fetchAllFields();
      			fetchAllFieldsbyCount();
-
+     			
      			function fetchAllFieldsbyCount() {
      				fieldService.fetchAllFieldsbyCount().then(function(d) {
      					console.log(d);
-     					self.fieldcategorys = d;
+     	     			self.fieldcategorys = d;
 
      				}, function(errResponse) {
      					console.error('Error while fetching Fields by count');

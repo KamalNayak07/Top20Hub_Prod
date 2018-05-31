@@ -74,50 +74,52 @@
 </head>
 
 <body ng-controller="fieldController as ctrll">
+
+ <div ng-value ="a=55"></div>
+
+ <div data-ng-init="ctrll.getTopicbyFieldId(<%=request.getParameter("id") %>)"></div>
+ 
 <div class="container">
-
-
-  		<h4 class="font-weight-bold mt-3"><strong>LIFESTYLE</strong></h4>
+  		<h4 class="font-weight-bold mt-3"><strong>{{ctrll.topics[0].field.field_desc}}</strong></h4>
         <hr class="red title-hr">
-			
 
-      <div class="row">
+        <div class="row">
           
-			<div class="col-md-4 mt-2" ng-repeat="ub in ctrll.fieldcategorys">
+			<div class="col-sm-4 mt-2" ng-repeat="ub in ctrll.topics">
 													
-                              <!--Card-->
-                                <div class="card">
+             <!--Card-->
+               <div class="card">
 
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(12).jpg" class="card-img-top" alt="Sample image">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
+                   <!--Card image-->
+                   <div class="view overlay">
+                       <img src="http://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(12).jpg" class="card-img-top" alt="Sample image">
+                       <a>
+                           <div class="mask rgba-white-slight"></div>
+                       </a>
+                   </div>
+                   <!--/.Card image-->
 
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        </br>
-                                        <h4 class="card-title"><strong>{{ub[0]}}</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
-                                        <p class="font-small grey-text mb-0">Anna Smith</p>
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
+                   <!--Card content-->
+                   <div class="card-body">
+                       <!--Title-->
+                       </br>
+                       <h4 class="card-title"><strong>{{ub.subject}}</strong></h4>
+                       <hr>
+                       <!--Text-->
+                       <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
+                           content.
+                       </p>
+                       <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
+                       <p class="font-small grey-text mb-0">Anna Smith</p>
+                       <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
+                   </div>
+                   <!--/.Card content-->
 
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-       		
+               </div>
+               <!--/.Card-->
+           </div>
+           <!--Grid column-->
+
 		</div>
 	</div>
 

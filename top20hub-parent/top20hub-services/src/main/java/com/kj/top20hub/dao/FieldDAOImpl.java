@@ -58,7 +58,7 @@ public class FieldDAOImpl implements FieldDAO {
 	@Override
 	public List<Object[]> getAllFieldsbyCount() {
 		Session currentSession = null;
-		String hql = "select f.field_desc, count(ft) from Field f left join f.topic as ft group by f.field_id";
+		String hql = "select f.field_id, f.field_desc, count(ft) from Field f left join f.topic as ft group by f.field_id";
 				
 		currentSession =  sessionfactory.getCurrentSession();
 		
@@ -66,7 +66,7 @@ public class FieldDAOImpl implements FieldDAO {
 
 		List<Object[]> users= (List<Object[]>)query.getResultList();
 		   
-		for(Object[] user: users){
+/*		for(Object[] user: users){
 		 
 	        String name = (String)user[0];
 		 
@@ -76,7 +76,7 @@ public class FieldDAOImpl implements FieldDAO {
 		        System.out.println(id);
 		 
 		    }
-		
+*/		
 		return users;		
 	}
 }

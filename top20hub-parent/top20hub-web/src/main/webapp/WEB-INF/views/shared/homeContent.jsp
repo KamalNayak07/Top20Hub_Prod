@@ -359,21 +359,23 @@
 
                         <h4 class="font-weight-bold mt-2"><strong>CATEGORIES</strong></h4>
                         <hr class="red title-hr">
-                    	
+                        
                         <ul class="list-group z-depth-1 mt-4">
                         
          <div ng-repeat="ub in ctrll.fieldcategorys">
 			                                                        
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a href ="./topicSorted" target="_blank">{{ub[0]}}</a>
-                                <span class="badge badge-danger badge-pill">{{ub[1]}}</span>
+                              
+                             <a href ="./topicSorted?id={{ub[0]}}" target="_blank" >{{ub[1]}}</a>
+                               
+                                <span class="badge badge-danger badge-pill">{{ub[2]}}</span>
                             </li>
                             
                     </div>        
            </ul>
-                    </section>
-</div>
-</div>                    
+      </section>
+     </div>
+  </div>                    
 
 <!-- Section: Categories -->
                  
