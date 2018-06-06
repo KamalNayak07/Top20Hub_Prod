@@ -1,6 +1,10 @@
 package com.kj.top20hub.dto;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,6 +18,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.sun.javafx.scene.control.skin.FXVK.Type;
 
 @Entity
 @Table(name = "topic")
@@ -32,6 +42,13 @@ public class Topic implements Serializable {
 	@Column
 	private String topic_url;
 		
+	@Column(nullable=true)
+	private int topic_rating;
+
+	@Column
+	@Temporal(TemporalType.DATE)
+	private Date inserted_on;
+	
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name="field_id",nullable=false)
 	private Field field;
@@ -42,12 +59,32 @@ public class Topic implements Serializable {
 	public Topic() {
 	}
 
-	public Topic(String subject, String topic_url, Field field) {
+	public Topic(String subject, String topic_url, Field field, int topic_rating, Date inserted_on) {
 		this.subject = subject;
 		this.topic_url = topic_url;
 		this.field = field;
+		this.topic_rating = topic_rating;
+		Calendar calendar = Calendar.getInstance();
+		this.inserted_on = calendar.getTime();
 	}
 
+	
+	public int getTopic_rating() {
+		return topic_rating;
+	}
+
+	public void setTopic_rating(int topic_rating) {
+		this.topic_rating = topic_rating;
+	}
+
+	public Date getInserted_on() {
+		return inserted_on;
+	}
+
+	public void setInserted_on(Date inserted_on) {
+		this.inserted_on = inserted_on;
+	}
+	
 	public Field getField() {	
 		return field;
 	}

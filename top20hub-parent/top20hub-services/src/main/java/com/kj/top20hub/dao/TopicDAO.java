@@ -18,6 +18,10 @@ public interface TopicDAO {
 
 	public List<Topic> getAllTopicsbyFieldId(int field_id);
 
+	public List<Topic> getAllTopicsbyInsertedOn();
+
+	public List<Topic> getAllTopicsbyRating();
+
 
 	
 	

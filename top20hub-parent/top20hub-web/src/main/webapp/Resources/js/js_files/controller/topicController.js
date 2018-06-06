@@ -15,13 +15,47 @@
      			    topic_image :'',
      			    topic_url : '',
      			    status : 0,
+     			    topic_rating: '',
+     		        inserted_on: '',     		        
      			    field : {
      					field_id : null,     			
          				field_desc : ''	
-         			}	
+         			}
      			};
      			
+     			self.topicInsertedOn = {
+         				topic_id : null,     			
+         				subject : '',
+         			    topic_image :'',
+         			    topic_url : '',
+         			    status : 0,
+         			    topic_rating: '',
+         		        inserted_on: '',     		        
+         			    field : {
+         					field_id : null,     			
+             				field_desc : ''	
+             			}
+         			};
+     			
+
+     			self.topicRating = {
+         				topic_id : null,     			
+         				subject : '',
+         			    topic_image :'',
+         			    topic_url : '',
+         			    status : 0,
+         			    topic_rating: '',
+         		        inserted_on: '',     		        
+         			    field : {
+         					field_id : null,     			
+             				field_desc : ''	
+             			}
+         			};
+
+     			
      			self.topics = [];
+     			self.topicInsertedOns = [];
+     			self.topicRatings = [];
      			self.fields = [];
      			self.submit = submit;
      			self.reset = reset;
@@ -33,7 +67,9 @@
      			
      			fetchAllFields();
      			fetchAllTopics();
-
+     			fetchAllTopicsbyInsertedOn();
+     			fetchAllTopicsbyRating();
+     			
      			function fetchAllFields(){
  				fieldService.fetchAllFields().then(function(d) {
  					self.fields = d;
@@ -52,6 +88,27 @@
      				});
      			}
 
+     			
+       			function fetchAllTopicsbyRating() {
+	 				topicService.fetchAllTopicsbyRating().then(function(d) {
+	 					self.topicRatings = d;
+	
+	 				}, function(errResponse) {
+	 					console.error('Error while fetching topics by Ratings');
+	 				});
+	 			}     			
+     			
+    
+     			
+     			function fetchAllTopicsbyInsertedOn() {
+	 				topicService.fetchAllTopicsbyInsertedOn().then(function(d) {
+	 					self.topicInsertedOns = d;
+	
+	 				}, function(errResponse) {
+	 					console.error('Error while fetching topics by inserted_on');
+	 				});
+	 			}     			
+     			
      			function createTopic(topic) {
      				self.topic.topic_url= "\\Resources\\img\\topic\\"+self.topic.topic_image.name;
      				console.log(topic);     					

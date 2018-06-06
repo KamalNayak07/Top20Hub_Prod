@@ -20,6 +20,25 @@ public class TopicDAOImpl implements TopicDAO {
 	private SessionFactory sessionfactory;
 	
 	@Override
+	public List<Topic> getAllTopicsbyInsertedOn() {
+		Session currentSession = null;
+		currentSession = sessionfactory.getCurrentSession();
+		Query<Topic> query = currentSession.createQuery("from Topic order by inserted_on desc",Topic.class);
+		List<Topic> AllTopicsList = query.setMaxResults(3).getResultList();
+		return AllTopicsList;
+	}
+	
+	@Override
+	public List<Topic> getAllTopicsbyRating() {
+		Session currentSession = null;
+		currentSession = sessionfactory.getCurrentSession();
+		Query<Topic> query = currentSession.createQuery("from Topic order by topic_rating desc",Topic.class);
+		List<Topic> AllTopicsList = query.setMaxResults(3).getResultList();
+		return AllTopicsList;
+	}
+	
+	
+	@Override
 	public List<Topic> getAllTopics() {
 		Session currentSession = null;
 		currentSession = sessionfactory.getCurrentSession();

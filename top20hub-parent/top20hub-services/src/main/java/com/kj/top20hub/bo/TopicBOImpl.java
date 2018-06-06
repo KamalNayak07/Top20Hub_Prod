@@ -51,5 +51,17 @@ public class TopicBOImpl implements TopicBO {
 		return topicdao.getAllTopicsbyFieldId(field_id);
 	}
 
+	@Override
+	@Transactional
+	public List<Topic> getAllTopicsbyInsertedOn() {
+		return topicdao.getAllTopicsbyInsertedOn();
+	}
+
+	@Override
+	@Transactional
+	public List<Topic> getAllTopicsbyRating() {
+		return topicdao.getAllTopicsbyRating();
+	}
+
 
 }

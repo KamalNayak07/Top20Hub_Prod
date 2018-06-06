@@ -92,7 +92,7 @@
 
                    <!--Card image-->
                    <div class="view overlay">
-                       <img src="http://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(12).jpg" class="card-img-top" alt="Sample image">
+                       <img src="${pageContext.request.contextPath}{{ub.topic_url}}" class="card-img-top" alt="Sample image">
                        <a>
                            <div class="mask rgba-white-slight"></div>
                        </a>
@@ -109,8 +109,10 @@
                        <p class="card-text mb-3">Some quick example text to build on the card title and make up the bulk of the card's
                            content.
                        </p>
-                       <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
+                       <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> {{ub.inserted_on}}</p>
                        <p class="font-small grey-text mb-0">Anna Smith</p>
+                         <span class="badge badge-danger badge-pill right">{{ub.topic_rating}}</span>
+                        
                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
                    </div>
                    <!--/.Card content-->

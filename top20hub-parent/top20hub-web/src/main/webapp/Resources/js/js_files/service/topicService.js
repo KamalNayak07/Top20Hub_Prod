@@ -4,15 +4,53 @@ app.factory('topicService', ['$http','$q',function($http,$q){
 	var Rest_deletetopic = '/topic/deleteTopic/';
 	var Rest_updateTopic = '/topic/updateTopic/';
 	var Rest_getAllTopicsbyFieldId = '/topic/getAllTopicsbyFieldId/';
+	var Rest_getAllTopicsbyInsertedOn = '/topic/getAllTopicsbyInsertedOn/';
+	var Rest_getAllTopicsbyRating = '/topic/getAllTopicsbyRating/';
+	
 		
 	var factory = {
 			fetchAllTopics: fetchAllTopics,
 			createTopic: createTopic,
 			updateTopic: updateTopic,
 			deleteTopic: deleteTopic,	
-			fetchAllTopicsbyFieldId : fetchAllTopicsbyFieldId
+			fetchAllTopicsbyFieldId : fetchAllTopicsbyFieldId,
+			fetchAllTopicsbyInsertedOn : fetchAllTopicsbyInsertedOn,
+			fetchAllTopicsbyRating : fetchAllTopicsbyRating
 	}
 	return factory;
+	
+	function fetchAllTopicsbyRating() {
+		var deferred = $q.defer();
+		$http.get(Rest_getAllTopicsbyRating)
+		.then(
+				function (response) {
+	                deferred.resolve(response.data);
+	            },
+	            function(errResponse){
+	                console.error('Error while fetching Topics by Rating');
+	                deferred.reject(errResponse);
+	            }
+	        );
+	        return deferred.promise;
+	    }
+	
+	
+	
+	function fetchAllTopicsbyInsertedOn() {
+		var deferred = $q.defer();
+		$http.get(Rest_getAllTopicsbyInsertedOn)
+		.then(
+				function (response) {
+	                deferred.resolve(response.data);
+	            },
+	            function(errResponse){
+	                console.error('Error while fetching Topics by Inserted_on');
+	                deferred.reject(errResponse);
+	            }
+	        );
+	        return deferred.promise;
+	    }
+	
 	
 	
 	function fetchAllTopicsbyFieldId(field_id) {

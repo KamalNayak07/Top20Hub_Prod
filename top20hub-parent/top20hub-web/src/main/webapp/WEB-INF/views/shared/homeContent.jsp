@@ -1,5 +1,7 @@
    <!-- Main layout -->
    <main>
+       <div ng-app="top20hubApp">
+	
          <div class="container-fluid">
 
             <!-- Magazine -->
@@ -9,199 +11,102 @@
                 <div class="col-xl-9 col-md-12">
 
                     <!--Section: Magazine posts-->
-                    <section class="section extra-margins listing-section mt-2">
+                    <section class="section extra-margins listing-section">
 
                         <h4 class="font-weight-bold"><strong>LATEST ARTICLES</strong></h4>
                         <hr class="red title-hr">
                         <!--Grid row-->
-                        <div class="row mb-4">
+                 	 <div ng-controller = "topicController as tctrl">
+                     
+                 	    <div class="row mb-4">
+                 	                                
                             <!--Grid column-->
-                            <div class="col-md-4">
+                            <div class="col-md-4" ng-repeat = "tc in tctrl.topicInsertedOns">
                                 <!--Card-->
                                 <div class="card">
 
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/City/6-col/img%20(49).jpg" class="card-img-top" alt="">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
+                      <!--Card image-->
+                      <div class="view overlay">
+                          <img src="${pageContext.request.contextPath}{{tc.topic_url}}" class="card-img-top" alt="">
+                          <a>
+                              <div class="mask rgba-white-slight"></div>
+                          </a>
+                      </div>
+                      <!--/.Card image-->
 
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
-                                       <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
-                                        <p class="font-small grey-text mb-0">Anna Smith</p>
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
+                      <!--Card content-->
+                      <div class="card-body">
+                          <!--Title-->
+                          <h4 class="card-title"><strong></br>{{tc.subject}}</strong></h4>
+                         <hr>
+                          <!--Text-->
+                          <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
+                              content.
+                          </p>
+                          <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> {{tc.inserted_on}}</p>
+                          <p class="font-small grey-text mb-0">Anna Smith </p>
+                          <span class="badge badge-danger badge-pill">{{tc.topic_rating}}</span>
+                          <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
+                      </div>
+                      <!--/.Card content-->
 
                                 </div>
                                 <!--/.Card-->
 
                             </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="col-md-4 text-left">
-
-                                <!--Card-->
-                                <div class="card">
-
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20(33).jpg" class="card-img-top" alt="">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
-                                        <p class="font-small grey-text mb-0">Anna Smith</p>
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="col-md-4 text-left">
-
-                                <!--Card-->
-                                <div class="card">
-
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20(84).jpg" class="card-img-top" alt="">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
-                                        <p class="font-small grey-text mb-0">Anna Smith</p>
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-                        </div>
-                        <!--/Grid row-->
-                        <h4 class="font-weight-bold mt-5"><strong>TOP ARTICLES</strong></h4>
+                            <!--Grid column-->			
+                         </div>
+                       </div>
+                 
+    	             
+    	                      <h4 class="font-weight-bold"><strong>TOP-RATED ARTICLES</strong></h4>
                         <hr class="red title-hr">
                         <!--Grid row-->
-                        <div class="row mb-4">
-
+                 	 <div ng-controller = "topicController as tctrl">
+                     
+                 	    <div class="row mb-4">
+                 	                                
                             <!--Grid column-->
-                            <div class="col-md-6 text-left">
-
+                            <div class="col-md-4" ng-repeat = "tc in tctrl.topicRatings">
                                 <!--Card-->
                                 <div class="card">
 
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Technology/4-col/img%20(1).jpg" class="card-img-top" alt="Sample image">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
+                      <!--Card image-->
+                      <div class="view overlay">
+                          <img src="${pageContext.request.contextPath}{{tc.topic_url}}" class="card-img-top" alt="">
+                          <a>
+                              <div class="mask rgba-white-slight"></div>
+                          </a>
+                      </div>
+                      <!--/.Card image-->
 
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
-                                        <p class="font-small grey-text mb-0">Anna Smith</p>
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
-
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <!--Grid column-->
-
-
-                            <!--Grid column-->
-                            <div class="col-md-6 text-left">
-
-                                <!--Card-->
-                                <div class="card">
-
-                                    <!--Card image-->
-                                    <div class="view overlay">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Technology/4-col/img%20(4).jpg" class="card-img-top" alt="Sample image">
-                                        <a>
-                                            <div class="mask rgba-white-slight"></div>
-                                        </a>
-                                    </div>
-                                    <!--/.Card image-->
-
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title"><strong></br>Card title</strong></h4>
-                                        <hr>
-                                        <!--Text-->
-                                        <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> 27/08/2017</p>
-                                        <p class="font-small grey-text mb-0">Anna Smith</p>
-                                        <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
-                                    </div>
-                                    <!--/.Card content-->
+                      <!--Card content-->
+                      <div class="card-body">
+                          <!--Title-->
+                          <h4 class="card-title"><strong></br>{{tc.subject}}</strong></h4>
+                         <hr>
+                          <!--Text-->
+                          <p class="card-text mb-3">Some quick example text to build on the </br>Card title and make up the bulk of the card's
+                              content.
+                          </p>
+                          <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="fa fa-clock-o"></i> {{tc.inserted_on}}</p>
+                          <p class="font-small grey-text mb-0">Anna Smith</p>
+						  <span class="badge badge-danger badge-pill">{{tc.topic_rating}}</span>
+                          <p class="text-right mb-0 font-small font-weight-bold"><a>read more <i class="fa fa-angle-right"></i></a></p>
+                      </div>
+                      <!--/.Card content-->
 
                                 </div>
                                 <!--/.Card-->
+
                             </div>
-                            <!--Grid column-->
-
-                        </div>
-                        <!--/Grid row-->
-
-                        <h4 class="font-weight-bold mt-5"><strong>SPORT</strong></h4>
+                            <!--Grid column-->			
+                         </div>
+                       </div>
+                 
+    	             
+    	             
+	           <h4 class="font-weight-bold mt-5"><strong>SPORT</strong></h4>
                         <hr class="red title-hr">
 
                         <!--Grid row-->
@@ -351,16 +256,15 @@
 
                 <!-- Sidebar -->
                 <div class="col-xl-3 col-md-12 widget-column">
-      <div ng-app="top20hubApp">
-	     <div ng-controller="fieldController as ctrll">
+       <div ng-controller="fieldController as ctrll">
 
                     <!-- Section: Categories -->
                     <section class="section">
 
-                        <h4 class="font-weight-bold mt-2"><strong>CATEGORIES</strong></h4>
+                        <h4 class="font-weight-bold"><strong>CATEGORIES</strong></h4>
                         <hr class="red title-hr">
                         
-                        <ul class="list-group z-depth-1 mt-4">
+                        <ul class="list-group z-depth-1 mt-3">
                         
          <div ng-repeat="ub in ctrll.fieldcategorys">
 			                                                        
@@ -375,7 +279,7 @@
            </ul>
       </section>
      </div>
-  </div>                    
+                     
 
 <!-- Section: Categories -->
                  
@@ -572,6 +476,7 @@
                 <!--/ Sidebar -->
             </div>
             <!--/ Magazine -->
+        </div>
         </div>
     </main>
     <!--/ Main layout -->

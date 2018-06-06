@@ -61,6 +61,29 @@ public class TopicController {
 		return AllTopicsListbyfieldId;
 	}
 	
+	@GetMapping("/getAllTopicsbyInsertedOn/")
+	public List<Topic> getAllTopicsbyInsertedOn()
+	{
+		List<Topic> AllTopicsListbyInsertedOn = topicService.getAllTopicsbyInsertedOn();
+		if(AllTopicsListbyInsertedOn.size()==0)
+		{
+		 	throw new UserNotFoundException("No topic available by Inserted On");
+		}		
+		return AllTopicsListbyInsertedOn;
+	}
+	
+	@GetMapping("/getAllTopicsbyRating/")
+	public List<Topic> getAllTopicsbyRating()
+	{
+		List<Topic> AllTopicsListbyRating = topicService.getAllTopicsbyRating();
+		if(AllTopicsListbyRating.size()==0)
+		{
+		 	throw new UserNotFoundException("No topic available by Rating");
+		}		
+		return AllTopicsListbyRating;
+	}
+	
+	
 	
 	@GetMapping("/{id}")
 	public Topic getTopic(@PathVariable int id)

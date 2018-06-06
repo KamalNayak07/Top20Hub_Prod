@@ -17,6 +17,12 @@ public interface TopicBO {
 	public void deleteTopic(int id);
 
 	public List<Topic> getAllTopicsbyFieldId(int field_id);
+	
+	public List<Topic> getAllTopicsbyInsertedOn();
+	
+	public List<Topic> getAllTopicsbyRating();
+
+
 
 
 }
